@@ -11,8 +11,6 @@ from llama_index.core import Settings
 from openai import OpenAI
 import time
 
-####
-
 # # Initialize global variables
 query_engine = None
 
