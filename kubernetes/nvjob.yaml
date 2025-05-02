@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: embedqa-gpu
+spec:
+  containers:
+  - name: embedqa-container
+    image: lfaris1234/rootwise-nim-app:latest
+    imagePullPolicy: Always
+    resources:
+      limits:
+        nvidia.com/gpu: 1
+        memory: "16Gi"
+        cpu: "2"
+      requests:
+        nvidia.com/gpu: 1
+    command: ["/bin/bash"]
+    args: ["-c", "sleep infinity"]
+
+  imagePullSecrets:
+    - name: ngc-secret
+
