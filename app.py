@@ -96,22 +96,46 @@ def load_documents(file_objs):
     global query_engine, rag_store
 
     try:
+        # Normalize input to a list
         if not file_objs:
             return "No files selected."
-        
-        file_paths = get_files_from_input(file_objs)
+        if not isinstance(file_objs, list):
+            file_objs = [file_objs]
+
         documents = []
-        print(f" \n\n file paths: {file_paths} \n\n")
-        for file_path in file_paths:
-            documents.extend(SimpleDirectoryReader(input_files=[file_path]).load_data())
-            file_name = os.path.basename(file_path)
-            destination_f = f"{os.path.dirname(rag_store)}/{rag_store}/{file_name}"
-            if file_name.endswith(".txt", ".pdf"):
-                os.makedirs(os.path.dirname(file_path), exist_ok=True)
-                shutil.copyfile(file_path, destination_f)
+
+        for file_obj in file_objs:
+            if not hasattr(file_obj, "name"):
+                return f"Uploaded object has no name: {file_obj}"
+
+            file_name = os.path.basename(file_obj.name)
+
+            if file_name == "/" or file_name.strip() == "":
+                return f"Invalid file name received: {file_name}"
+
+            if not (file_name.endswith(".txt") or file_name.endswith(".pdf")):
+                print(f"Skipping unsupported file: {file_name}")
+                continue
+
+            dest_path = os.path.join(rag_store, file_name)
+            os.makedirs(rag_store, exist_ok=True)
+
+            shutil.copyfile(file_obj.name, dest_path)
+            print(f"Copied file to: {dest_path}")
+
+            try:
+                reader = SimpleDirectoryReader(
+                    input_files=[dest_path],
+                    file_extractor={".pdf": PDFReader()}
+                )
+                docs = reader.load_data()
+                print(f"Loaded {len(docs)} documents from {file_name}")
+                documents.extend(docs)
+            except Exception as e:
+                print(f"Error loading {file_name}: {e}")
 
         if not documents:
-            return f"No documents found in the selected files."
+            return "No valid documents were uploaded."
 
         vector_store = FaissVectorStore(faiss_index=faiss.IndexFlatL2(1536))
         index = VectorStoreIndex.from_documents(
@@ -120,10 +144,12 @@ def load_documents(file_objs):
             embed_model=nvidia_embed_model
         )
         query_engine = index.as_query_engine()
+
         return "Documents loaded successfully!"
-    
+
     except Exception as e:
         return f"Error loading documents: {str(e)}"
+    
 
 def add_to_rag(season, ingredients, restrictions):
     global rag_data, query_engine
@@ -198,7 +224,7 @@ def stream_response(message, history):
 
     try:
         response = query_engine.query(
-            "You are a helpful, friendly farmers market employee that is responding to the user: \n" + message +
+            "You are a helpful, friendly farmers market employee that is prompting the user to be more environmentally conscious with their cooking and food usage: \n" + message +
             " \n Your eventual goal is to offer the user the following: \n" +
             " \n - **Recipes**: Cook time. Community notes and tips. \n" +
             " \n DO NOT RECOMMEND RECIPES THAT INVOLVE FOODS THAT THE USER IS ALLERGIC TO!! \n\n" +
@@ -207,7 +233,8 @@ def stream_response(message, history):
             " \n - Food donation resources, including Food Not Bombs drop-off locations. \n" +
             " \n Food lifespan and storage tips (e.g., using paper towels to extend the life of greens).\n" +
             " Food as Medicine insights: Health benefits (e.g., turmeric for inflammation). Spiritual properties (e.g., calming effects of certain herbs).\n" +
-            " \n\n Be sure to remember to be brief, that the user is always right, and sustainability is extremely important."
+            " \n\n Be sure to remember to be brief, that the user is always right, and sustainability is extremely important." +
+            " Make sure that all responses are broken into digestible, short, concise, personable explainations and bullet points that the user can follow easily. DO NOT BE TOO WORDY"
         )
         yield history + [
             {"role": "user", "content": message},
