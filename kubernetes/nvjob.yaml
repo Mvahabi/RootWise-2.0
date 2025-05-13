@@ -16,6 +16,15 @@ spec:
         nvidia.com/gpu: 1
     command: ["/bin/bash"]
     args: ["-c", "sleep infinity"]
+    volumeMounts:
+    - name: app-volume
+      mountPath: /app/data
+
+  volumes:
+  - name: app-volume
+    persistentVolumeClaim:
+      claimName: rootwise-pvc
+
 
   imagePullSecrets:
     - name: ngc-secret

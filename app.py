@@ -7,6 +7,7 @@ import faiss
 from llama_index.embeddings.nvidia import NVIDIAEmbedding
 # from llama_index.llms.nvidia import NVIDIA
 from llama_index.core.node_parser import SentenceSplitter
+from llama_index.readers.file import PDFReader
 from llama_index.core import Settings
 from openai import OpenAI
 import time
@@ -27,7 +28,7 @@ client = OpenAI(
 )
 
 rag_data = []
-rag_store = './system_data'
+rag_store = './system_data'  # redundant? (this is specified in main(), feels like should be one variable)
 
 def initialize_rag(file_path):
     global query_engine, rag_store
@@ -38,9 +39,23 @@ def initialize_rag(file_path):
     try:
         documents = []
         for fname in os.listdir(rag_store):
-            if fname.endswith(".txt"):
-                full_path = os.path.join(rag_store, fname)
-                documents.extend(SimpleDirectoryReader(input_files=[full_path]).load_data())
+            full_path = os.path.join(rag_store, fname)
+
+            if not (fname.endswith(".txt") or fname.endswith(".pdf")):
+                print(f"Skipping unsupported file: {fname}")
+                continue
+
+            try:
+                print(f"Loading: {full_path}")
+                reader = SimpleDirectoryReader(
+                    input_files=[full_path],
+                    file_extractor={".pdf": PDFReader()}
+                )
+                docs = reader.load_data()
+                documents.extend(docs)
+
+            except Exception as file_err:
+                print(f"Skipping {full_path} due to error: {file_err}")
 
         if not documents:
             return "Error: No .txt files found in system_data."
@@ -49,8 +64,11 @@ def initialize_rag(file_path):
         vector_store = FaissVectorStore(faiss_index=faiss.IndexFlatL2(1536))
 
         # Pass it explicitly
+        splitter = SentenceSplitter(chunk_size=400, chunk_overlap=50)
+
         index = VectorStoreIndex.from_documents(
             documents,
+            transformations=[splitter],
             vector_store=vector_store,
             embed_model=nvidia_embed_model
         )
@@ -88,7 +106,7 @@ def load_documents(file_objs):
             documents.extend(SimpleDirectoryReader(input_files=[file_path]).load_data())
             file_name = os.path.basename(file_path)
             destination_f = f"{os.path.dirname(rag_store)}/{rag_store}/{file_name}"
-            if file_name.endswith(".txt"):
+            if file_name.endswith(".txt", ".pdf"):
                 os.makedirs(os.path.dirname(file_path), exist_ok=True)
                 shutil.copyfile(file_path, destination_f)
 
@@ -258,7 +276,10 @@ with gr.Blocks(css=".gradio-container {background-color: #8A9A5B;} h1 {text-alig
         )
 
 if __name__ == "__main__":
-  initialize_rag('./system_data')
+  result = initialize_rag('./system_data')
+  print(f"RAG init result: {result}")
+
   demo.queue()
-  demo.launch(share=True)
+#   demo.launch(share=True)
+  demo.launch(server_name="0.0.0.0", server_port=7860)
   print("herelo")

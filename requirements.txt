@@ -27,7 +27,7 @@ sentence-transformers==3.0.0
 nltk==3.8.1
 
 # Visualization / UI
-gradio==3.36.1
+gradio>=5.0.0
 
 # PostgreSQL
 asyncpg==0.29.0

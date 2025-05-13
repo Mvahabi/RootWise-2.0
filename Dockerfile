@@ -1,24 +1,16 @@
 FROM nvcr.io/nim/nvidia/nv-embedqa-e5-v5:latest
 
-# Switch to root for installing packages
 USER root
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && \
-    apt-get install -y python3-pip && \
-    ln -sf /usr/bin/pip3 /usr/local/bin/pip
+# Install Python 3.10 and pip
+RUN python3 -m pip install --index-url=https://pypi.org/simple --upgrade pip
+COPY requirements.txt .
+RUN python3 -m pip install --no-cache-dir --index-url=https://pypi.org/simple -r requirements.txt\
+    && pip install -U "pydantic>=2.0,<3.0" "llama-index[faiss]"
 
-
-# Then switch back to the original user (if needed)
-# USER <your-previous-username-or-UID>
 
 WORKDIR /app
-
-COPY requirements.txt .
-RUN pip install --no-cache-dir --index-url=https://pypi.org/simple -r requirements.txt
-RUN pip install -U "pydantic>=2.0,<3.0"
-RUN pip install "llama-index[faiss]"
-
-
 COPY . .
 
 EXPOSE 7860
