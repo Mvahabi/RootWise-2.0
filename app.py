@@ -11,6 +11,8 @@ from llama_index.readers.file import PDFReader
 from llama_index.core import Settings
 from openai import OpenAI
 import time
+import subprocess
+import uuid
 
 # # Initialize global variables
 query_engine = None
@@ -82,6 +84,35 @@ def initialize_rag(file_path):
     except Exception as e:
         print(f"Failed to initialize query engine. Exception: {str(e)}")
         return f"Failed to initialize query engine. Exception: {str(e)}"
+
+
+def detect_vegetables(image_path):
+    try:
+        result = subprocess.run(
+            ["python3", "vis-transformer.py", image_path],
+            capture_output=True, text=True, check=True
+        )
+        lines = result.stdout.splitlines()
+        vegs = []
+        for line in lines:
+            if line.startswith("Identified Vegetables:"):
+                items = line.split(":", 1)[1].strip(" []\n")
+                vegs = [v.strip("' ") for v in items.split(',') if v.strip()]
+        add_to_rag(season='', ingredients=str(vegs), restrictions='')                    # could use some add_to_rag() improvement
+        return vegs if vegs else ["No vegetables detected."]
+    except subprocess.CalledProcessError as e:
+        return [f"Error: {e.stderr.strip()}"]
+
+def handle_image_upload(file_obj):
+    if not hasattr(file_obj, "name"):
+        return ["Invalid file"]
+    os.makedirs("images", exist_ok=True)
+    temp_path = f"images/{uuid.uuid4().hex}.jpg"
+    shutil.copyfile(file_obj.name, temp_path)
+    vegs = detect_vegetables(temp_path)
+    os.remove(temp_path)  
+    return vegs
+
 
 def get_files_from_input(file_objs):
     if not file_objs:
@@ -262,12 +293,10 @@ with gr.Blocks(css=".gradio-container {background-color: #8A9A5B;} h1 {text-alig
 
     with gr.Row():
         with gr.Column():
-            season_input = gr.Textbox(label="Season")
-            ingredients_input = gr.Textbox(label="Ingredients (comma-separated)")
-            restrictions_input = gr.Textbox(label="Dietary Restrictions (comma-separated)")
-
-            add_rag_button = gr.Button("Add to RAG Database")
-            add_rag_button.click(add_to_rag, inputs=[season_input, ingredients_input, restrictions_input], outputs=gr.Textbox(label="RAG Status"))
+            veg_image = gr.File(label="Upload Vegetable Photo", file_types=["image"])
+            detect_button = gr.Button("Detect Vegetables")
+            detected_output = gr.Textbox(label="Detected Vegetables")
+            detect_button.click(handle_image_upload, inputs=[veg_image], outputs=[detected_output])
 
         with gr.Column():
             chatbot = gr.Chatbot(type='messages')
@@ -282,6 +311,14 @@ with gr.Blocks(css=".gradio-container {background-color: #8A9A5B;} h1 {text-alig
         file_upload = gr.File(label="Upload Documents", file_types=[".txt", ".pdf"])
         load_button = gr.Button("Load Documents")
         load_button.click(load_documents, inputs=[file_upload], outputs=gr.Textbox(label="Status"))
+
+    with gr.Column():
+            season_input = gr.Textbox(label="Season")
+            ingredients_input = gr.Textbox(label="Ingredients (comma-separated)")
+            restrictions_input = gr.Textbox(label="Dietary Restrictions (comma-separated)")
+
+            add_rag_button = gr.Button("Add to RAG Database")
+            add_rag_button.click(add_to_rag, inputs=[season_input, ingredients_input, restrictions_input], outputs=gr.Textbox(label="RAG Status"))
 
     with gr.Column():
         open_pdf_button = gr.Button("About Us")
