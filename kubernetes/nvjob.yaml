@@ -19,6 +19,9 @@ spec:
     volumeMounts:
     - name: app-volume
       mountPath: /app/data
+    envFrom:
+    - secretRef:
+        name: api-env-secrets
 
   volumes:
   - name: app-volume
