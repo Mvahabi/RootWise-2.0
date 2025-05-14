@@ -26,4 +26,3 @@ env/
 
 # Ignore OS files
 .DS_Store
-best.pt
