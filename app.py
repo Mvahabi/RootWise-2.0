@@ -5,7 +5,6 @@ from llama_index.core import SimpleDirectoryReader, VectorStoreIndex, StorageCon
 from llama_index.vector_stores.faiss import FaissVectorStore
 import faiss
 from llama_index.embeddings.nvidia import NVIDIAEmbedding
-# from llama_index.llms.nvidia import NVIDIA
 from llama_index.core.node_parser import SentenceSplitter
 from llama_index.readers.file import PDFReader
 from llama_index.core import Settings
@@ -13,10 +12,10 @@ from openai import OpenAI
 import time
 import subprocess
 import uuid
+from pdf2image import convert_from_path
 
-# # Initialize global variables
+# Initialize global variables
 query_engine = None
-
 
 global nvidia_embed_model 
 nvidia_embed_model = NVIDIAEmbedding(
@@ -194,9 +193,12 @@ def add_to_rag(season, ingredients, restrictions):
     rag_data.append(new_entry)
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, 'a') as file:
-        file.write(
-        f"Season: {new_entry['season']}, Ingredients: {', '.join(new_entry['ingredients'])}, Dietary Restrictions: {', '.join(new_entry['restrictions'])}\n"
-    )
+        if season:
+            file.write(f"Season: {new_entry['season']}\n")
+        if ingredients:
+            file.write(f"Ingredients: {', '.join(new_entry['ingredients'])}\n")
+        if restrictions:
+            file.write(f"Dietary Restrictions: {', '.join(new_entry['restrictions'])}\n")
 
     documents = []
     documents.extend(SimpleDirectoryReader(input_files=[file_path]).load_data())
@@ -218,30 +220,9 @@ def add_to_rag(season, ingredients, restrictions):
     except Exception as e:
         return f"Error updating rag: {str(e)}"
 
+# is this being used anywhere??
 def embed_query(text):
     return nvidia_embed_model.embed([text])[0]
-
-def chat(message, history):
-    global query_engine
-    embedding = embed_query(message)
-
-    if query_engine is None:
-        return history + [
-            {"role": "user", "content": message},
-            {"role": "assistant", "content": "I don't have any documents to reference, but I'll try my best."}
-        ]
-
-    try:
-        response = query_engine.query(message)
-        return history + [
-            {"role": "user", "content": message},
-            {"role": "assistant", "content": str(response)}
-        ]
-    except Exception as e:
-        return history + [
-            {"role": "user", "content": message},
-            {"role": "assistant", "content": f"An error occurred: {str(e)}"}
-        ]
 
 def stream_response(message, history):
     global query_engine
@@ -254,9 +235,13 @@ def stream_response(message, history):
         return
 
     try:
-        response = query_engine.query(
+        prompt = (
             "You are a friendly and sustainability-minded farmers market assistant. "
-            "Your job is to *prompt the user* to make environmentally conscious food choices by asking them helpful, specific questions."
+            "Your job is both to: "
+            "\n *prompt the user* to make environmentally conscious food choices by asking them helpful, specific questions"
+            "\n *make meaningful recommendations by sharing information about* sustainable cooking practices, "
+            "seasonal and local produce, food preservation techniques, zero-waste habits, and community food resources. "
+            "Explain how certain actions can reduce waste, save money, or benefit health. Anticipate the user's needs and offer gentle suggestions, not just questions."
             "\n\nYour overall goals are:\n"
             "- Recommend recipes based on seasonal ingredients, user preferences, and allergies\n"
             "- Offer food scrap tips: composting, freezing leftovers, zero-waste cooking (e.g., carrot top pesto)\n"
@@ -267,20 +252,32 @@ def stream_response(message, history):
             "RULES:\n"
             "- NEVER suggest recipes that include ingredients the user is allergic to\n"
             "- DO NOT overwhelm the user with information all at once\n"
-            "- DO NOT answer unless you have asked the user a question first\n"
-            "- Begin each turn by asking a short, kind, useful question to understand what the user has or needs\n"
+            "- End each turn by asking a short, kind, useful question to understand what the user has or needs (NEVER ASK MORE THAN ONE)\n"
             "- Use concise, personable bullet points when explaining things\n"
             "- Be warm, respectful, and never contradict the user\n"
-            "- Always prioritize sustainability\n\n"
+            "- Always prioritize sustainability and functional medicine\n\n"
 
             "EXAMPLE FIRST PROMPTS:\n"
             "- 'What ingredients do you have on hand today?'\n"
             "- 'Are you cooking for anyone with dietary restrictions?'\n"
-            "- 'Do you have any leftover veggies or scraps you'd like to use?'\n\n"
-
-            "Now respond based on this user message:\n"
-            f"{message}"
         )
+
+        # If you have message history, flatten it here:
+        flattened_history = ""
+        for m in history[-2:]:  # last 2 messages only
+            flattened_history += f"{m['role'].capitalize()}: {m['content']}\n"
+
+        # Combine all parts into one prompt string:
+        full_prompt = (
+            prompt
+            + "\nHere is the recent conversation:\n"
+            + flattened_history
+            + f"User: {message}\n"
+            + "Now please continue the conversation in character."
+        )
+
+        response = query_engine.query(full_prompt)
+
         yield history + [
             {"role": "user", "content": message},
             {"role": "assistant", "content": str(response)}
@@ -293,6 +290,46 @@ def stream_response(message, history):
             {"role": "assistant", "content": f"Error processing query: {str(e)}"}
         ]
 
+
+def list_system_data_files():
+    try:
+        files = os.listdir(rag_store)
+        return [f for f in files if f.endswith((".txt", ".pdf"))]
+    except Exception as e:
+        return [f"Error: {e}"]
+
+def read_selected_file(filename):
+    if not filename:
+        return gr.update(value="No file selected."), gr.update(visible=False)
+    full_path = os.path.join(rag_store, filename)
+    if not os.path.exists(full_path):
+        return gr.update(value="File not found."), gr.update(visible=False)
+
+    if filename.endswith(".txt"):
+        with open(full_path, "r") as f:
+            return gr.update(value=f.read()), gr.update(visible=False)
+
+    elif filename.endswith(".pdf"):
+        try:
+            images = convert_from_path(full_path, dpi=100)
+            os.makedirs("temp_renders", exist_ok=True)
+            image_paths = []
+
+            for i, img in enumerate(images):
+                img_path = f"temp_renders/{uuid.uuid4().hex}_page_{i}.png"
+                img.save(img_path, "PNG")
+                image_paths.append(img_path)
+
+            # Return placeholder text and show the first image (could be made into carousel later)
+            return gr.update(value="PDF rendered below:"), gr.update(value=image_paths[0], visible=True)
+
+        except Exception as e:
+            return gr.update(value=f"Error rendering PDF: {str(e)}"), gr.update(visible=False)
+
+    else:
+        return gr.update(value="Unsupported file type."), gr.update(visible=False)
+
+    
 
 def show_pdf():
     file_path = "./about_us.pdf"
@@ -328,12 +365,35 @@ with gr.Blocks(css=".gradio-container {background-color: #8A9A5B;} h1 {text-alig
         load_button.click(load_documents, inputs=[file_upload], outputs=gr.Textbox(label="Status"))
 
     with gr.Column():
-            season_input = gr.Textbox(label="Season")
-            ingredients_input = gr.Textbox(label="Ingredients (comma-separated)")
-            restrictions_input = gr.Textbox(label="Dietary Restrictions (comma-separated)")
+        season_input = gr.Textbox(label="Season")
+        ingredients_input = gr.Textbox(label="Ingredients (comma-separated)")
+        restrictions_input = gr.Textbox(label="Dietary Restrictions (comma-separated)")
 
-            add_rag_button = gr.Button("Add to RAG Database")
-            add_rag_button.click(add_to_rag, inputs=[season_input, ingredients_input, restrictions_input], outputs=gr.Textbox(label="RAG Status"))
+        add_rag_button = gr.Button("Add to RAG Database")
+        add_rag_button.click(add_to_rag, inputs=[season_input, ingredients_input, restrictions_input], outputs=gr.Textbox(label="RAG Status"))
+
+    with gr.Column():
+        refresh_button = gr.Button("Explore Files")
+        file_list = gr.Dropdown(choices=[], label="Select a File", interactive=True)
+        file_contents = gr.Textbox(label="File Contents", interactive=False)
+        file_preview = gr.Image(label="PDF Preview", visible=False)
+
+        def refresh_files():
+            files = list_system_data_files()
+            return gr.update(choices=files, value=None)
+
+        refresh_button.click(
+            refresh_files,
+            inputs=[],
+            outputs=[file_list]
+        )
+
+        file_list.change(
+            read_selected_file,
+            inputs=[file_list],
+            outputs=[file_contents, file_preview]
+        )
+
 
     with gr.Column():
         open_pdf_button = gr.Button("About Us")
@@ -359,6 +419,5 @@ if __name__ == "__main__":
   print(f"RAG init result: {result}")
 
   demo.queue()
-#   demo.launch(share=True)
   demo.launch(server_name="0.0.0.0", server_port=7860)
   print("herelo")
