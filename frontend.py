@@ -12,21 +12,22 @@ from logic import (
     hide_pdf
 )
 
-with gr.Blocks(css=".gradio-container {background-color: #8A9A5B;} h1 {text-align: center; font-family: 'Georgia', cursive, sans-serif;}") as demo:
+with gr.Blocks(css="""
+.gradio-container {background-color: #8A9A5B;}
+h1 {text-align: center; font-family: 'Georgia', cursive, sans-serif;}
+.section {padding: 1rem; margin: 1rem; border-radius: 12px; background: rgba(255, 255, 255, 0.85);}
+""") as demo:
 
     with gr.Row():
         gr.Image(type="filepath", value="./frontpage.png", visible=True)
 
     with gr.Row():
-        with gr.Column():
-            gr.Markdown(
-                "Heard something tasty? Thought of a clever zero-waste trick? "
-                "**This is your personal notepad.** Type whatever you'd like to remember or explore later!"
-            )
+        with gr.Column(elem_classes="section"):
+            gr.Markdown("## Idea Journal")
+            gr.Markdown("Heard something tasty? Thought of a clever zero-waste trick? **This is your personal notepad.**")
 
             user_name = gr.Textbox(label="What's your name?", placeholder="e.g. Lily, FoodWizard42...")
             name_submit = gr.Button("Start My Idea Journal")
-            name_status = gr.Textbox(interactive=False, show_label=False)
 
             user_entry = gr.Textbox(
                 label="New thought, recipe, tip, or idea?",
@@ -34,77 +35,65 @@ with gr.Blocks(css=".gradio-container {background-color: #8A9A5B;} h1 {text-alig
                 placeholder="Write anything — e.g. 'carrot top pesto sounds good', 'swap rice for barley', 'ask grandma about fermentation'"
             )
             entry_submit = gr.Button("Save to My Notepad")
-            entry_status = gr.Textbox(interactive=False, show_label=False)
 
-            name_submit.click(set_user_name, inputs=[user_name], outputs=[name_status])
-            entry_submit.click(append_to_user_rag, inputs=[user_entry], outputs=[entry_status])
+            name_submit.click(set_user_name, inputs=[user_name], outputs=[user_name])
+            entry_submit.click(append_to_user_rag, inputs=[user_entry], outputs=[user_entry])
 
-        with gr.Column():
-            gr.Markdown("### Step 3: Upload and Detect Vegetables")
-            veg_image = gr.File(label="Vegetable Image", file_types=["image"])
-            detect_button = gr.Button("Detect")
-            detected_output = gr.Textbox(label="", interactive=False, show_label=False)
+        with gr.Column(elem_classes="section"):
+            gr.Markdown("## Upload & Detect Vegetables")
+            veg_image = gr.File(label="Upload an Image", file_types=["image"])
+            detect_button = gr.Button("Detect Vegetables")
+            detected_output = gr.Textbox(interactive=False, show_label=False)
             detect_button.click(handle_image_upload, inputs=[veg_image], outputs=[detected_output])
 
-        with gr.Column():
-            gr.Markdown("### Step 4: Chat with the Assistant")
+
+        with gr.Column(elem_classes="section"):
+            gr.Markdown("## Chat with the Assistant")
             chatbot = gr.Chatbot(type='messages')
             msg = gr.Textbox(label="Ask a Question")
             clear = gr.Button("Clear Chat")
-
             msg.submit(stream_response, inputs=[msg, chatbot], outputs=[chatbot], queue=True)
             msg.submit(lambda: "", outputs=[msg])
             clear.click(lambda: None, None, chatbot, queue=False)
 
-    with gr.Accordion("Upload and Load Documents", open=False):
-        file_upload = gr.File(label="Upload .txt or .pdf", file_types=[".txt", ".pdf"])
-        load_button = gr.Button("Load")
-        load_button.click(load_documents, inputs=[file_upload], outputs=gr.Textbox(label="Load Status"))
+    with gr.Row():
+        with gr.Column(elem_classes="section"):
+            gr.Markdown("## Data Tools")
 
-    with gr.Accordion("Add Ingredients to RAG", open=False):
-        ingredients_input = gr.Textbox(label="Ingredients (comma-separated)")
-        add_ingredients_button = gr.Button("Submit Ingredients")
-        add_ingredients_button.click(
-            lambda s: add_to_rag("", s, ""),  # only ingredients filled
-            inputs=[ingredients_input],
-            outputs=gr.Textbox(label="Status")
-        )
+            gr.Markdown("### Load Custom Documents")
+            file_upload = gr.File(label="Upload Documents", file_types=[".txt", ".pdf"])
+            load_button = gr.Button("Load Documents")
+            load_button.click(load_documents, inputs=[file_upload], outputs=gr.Textbox(label="Status"))
 
-    with gr.Accordion("Add Seasonal Info to RAG", open=False):
-        season_input = gr.Textbox(label="Season")
-        add_season_button = gr.Button("Submit Season")
-        add_season_button.click(
-            lambda s: add_to_rag(s, "", ""),  # only season filled
-            inputs=[season_input],
-            outputs=gr.Textbox(label="Status")
-        )
+            gr.Markdown("### Add to Your RAG Dataset")
+            ingredients_input = gr.Textbox(label="Ingredients (comma-separated)")
+            add_ingredients_button = gr.Button("Submit Ingredients")
+            add_ingredients_button.click(lambda s: add_to_rag("", s, ""), inputs=[ingredients_input], outputs=[ingredients_input])
 
-    with gr.Accordion("Add Allergies/Dietary Restrictions", open=False):
-        restrictions_input = gr.Textbox(label="Dietary Restrictions (comma-separated)")
-        add_restrictions_button = gr.Button("Submit Restrictions")
-        add_restrictions_button.click(
-            lambda r: add_to_rag("", "", r),  # only restrictions filled
-            inputs=[restrictions_input],
-            outputs=gr.Textbox(label="Status")
-        )
+            season_input = gr.Textbox(label="Season")
+            add_season_button = gr.Button("Submit Season")
+            add_season_button.click(lambda s: add_to_rag(s, "", ""), inputs=[season_input], outputs=[season_input])
 
-    with gr.Accordion("Explore System Files", open=False):
-        refresh_button = gr.Button("Refresh File List")
-        file_list = gr.Dropdown(choices=[], label="Available Files")
-        file_contents = gr.Textbox(label="File Preview", interactive=False)
-        file_preview = gr.Image(label="PDF Snapshot", visible=False)
+            restrictions_input = gr.Textbox(label="Dietary Restrictions (comma-separated)")
+            add_restrictions_button = gr.Button("Submit Restrictions")
+            add_restrictions_button.click(lambda r: add_to_rag("", "", r), inputs=[restrictions_input], outputs=[restrictions_input])
 
-        def refresh_files():
-            files = list_system_data_files()
-            return gr.update(choices=files, value=None)
+            gr.Markdown("### System File Viewer")
+            refresh_button = gr.Button("Refresh File List")
+            file_list = gr.Dropdown(choices=[], label="Available Files")
+            file_contents = gr.Textbox(label="File Preview", interactive=False)
+            file_preview = gr.Image(label="PDF Snapshot", visible=False)
 
-        refresh_button.click(refresh_files, outputs=[file_list])
-        file_list.change(read_selected_file, inputs=[file_list], outputs=[file_contents, file_preview])
+            def refresh_files():
+                files = list_system_data_files()
+                return gr.update(choices=files, value=None)
 
-    with gr.Accordion("About This Project", open=False):
-        open_pdf_button = gr.Button("Show About Page")
-        pdf_viewer = gr.Image(type="filepath", value="./about_us.png", visible=False, label="")
-        close_pdf_button = gr.Button("Close", visible=False)
+            refresh_button.click(refresh_files, outputs=[file_list])
+            file_list.change(read_selected_file, inputs=[file_list], outputs=[file_contents, file_preview])
 
-        open_pdf_button.click(show_pdf, outputs=[pdf_viewer, close_pdf_button], queue=False)
-        close_pdf_button.click(hide_pdf, outputs=[pdf_viewer, close_pdf_button], queue=False)
+            gr.Markdown("### About This Project")
+            open_pdf_button = gr.Button("Show About Page")
+            pdf_viewer = gr.Image(type="filepath", value="./about_us.png", visible=False)
+            close_pdf_button = gr.Button("Close", visible=False)
+            open_pdf_button.click(show_pdf, outputs=[pdf_viewer, close_pdf_button], queue=False)
+            close_pdf_button.click(hide_pdf, outputs=[pdf_viewer, close_pdf_button], queue=False)
