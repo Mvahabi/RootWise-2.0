@@ -267,9 +267,9 @@ def add_to_rag(season, ingredients, restrictions):
     base_dir = 'system_data'
     os.makedirs(base_dir, exist_ok=True)
 
-    season_path = os.path.join(base_dir, 'user_rag_seasons.txt')
-    ingredients_path = os.path.join(base_dir, 'user_rag_ingredients.txt')
-    restrictions_path = os.path.join(base_dir, 'user_rag_restrictions.txt')
+    season_path = os.path.join(base_dir, 'given_season.txt')
+    ingredients_path = os.path.join(base_dir, 'given_ingredients.txt')
+    restrictions_path = os.path.join(base_dir, 'given_restrictions.txt')
 
     for path in [season_path, ingredients_path, restrictions_path]:
         open(path, 'a').close()
@@ -334,6 +334,27 @@ def stream_response(message, history):
 
         rag_excerpt = rag_contents[:800]  # truncate to ~500 tokens max (adjust as needed)
 
+        ingredient_path = f"./system_data/given_ingredients.txt"
+        if os.path.exists(ingredient_path):
+            with open(ingredient_path, "r") as f:
+                ingredients = f.read().strip()
+        else:
+            ingredients = ""
+
+        season_path = f"./system_data/given_season.txt"
+        if os.path.exists(season_path):
+            with open(season_path, "r") as f:
+                season = f.read().strip()
+        else:
+            season = ""
+
+        allergy_path = f"./system_data/given_restrictions.txt"
+        if os.path.exists(allergy_path):
+            with open(allergy_path, "r") as f:
+                allergies = f.read().strip()
+        else:
+            allergies = ""
+
         prompt = (
             "You are a warm, sustainability-minded farmers market assistant.\n\n"
             "The user has a personalized knowledge base. Prioritize the following excerpts from this:"
@@ -341,7 +362,7 @@ def stream_response(message, history):
             "Your job is both to: "
             "\n *prompt the user* to make environmentally conscious food choices by asking them helpful, specific questions"
             "\n *make meaningful recommendations by sharing information about* sustainable cooking practices, "
-            "seasonal and local produce, food preservation techniques, zero-waste habits, and community food resources. "
+            f"seasonal (current season: {season}) and local produce, food preservation techniques, zero-waste habits, and community food resources. "
             "Explain how certain actions can reduce waste, save money, or benefit health. Anticipate the user's needs and offer gentle suggestions, not just questions."
             "\n\nYour overall goals are:\n"
             "- Recommend recipes based on seasonal ingredients, user preferences, and allergies\n"
@@ -351,7 +372,8 @@ def stream_response(message, history):
             "- Briefly mention food-as-medicine properties (e.g., turmeric for inflammation)\n\n"
 
             "RULES:\n"
-            "- NEVER suggest recipes that include ingredients the user is allergic to\n"
+            f"- NEVER suggest recipes that include ingredients the user is allergic to: {allergies}\n"
+            f"- try to use the ingredients that the user has:  {ingredients}"
             "- DO NOT overwhelm the user with information all at once\n"
             "- End each turn by asking a short, kind, useful question to understand what the user has or needs (NEVER ASK MORE THAN ONE)\n"
             "- Use concise, personable bullet points when explaining things\n"
