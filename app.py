@@ -16,6 +16,7 @@ from pdf2image import convert_from_path
 
 # Initialize global variables
 query_engine = None
+user_rag_last_modified = 0
 
 global nvidia_embed_model 
 nvidia_embed_model = NVIDIAEmbedding(
@@ -33,7 +34,7 @@ rag_store = './system_data'  # redundant? (this is specified in main(), feels li
 
 #
 # Initialize rag database:
-# - load in all documents in system_data, catch errors
+# - load all documents in ./system_data into the faiss db, catch errors
 # - create the faiss vector store
 # - initialize "sentence splitter" to handle large documents, apply this as a transformation for the vector store
 #
@@ -91,6 +92,29 @@ def initialize_rag(file_path):
         return f"Failed to initialize query engine. Exception: {str(e)}"
 
 #
+# Handling userRAG
+#
+# def initialize_user_rag():
+#     # create and add <user>RAG to the database
+#     # somehow make this be how we are titling it? need to send it to the other functions when the user inputs their name
+
+# def user_rag_updated(file_path):
+#     global user_rag_last_modified
+#     current_time = os.path.getmtime(file_path)
+#     if current_time != user_rag_last_modified:
+#         user_rag_last_modified = current_time
+#         return True
+#     return False
+
+# def user_rag(file_path):
+#     global query_engine, rag_store
+
+#     if query_engine is None or user_rag_updated():
+#         documents = SimpleDirectoryReader(input_files=[file_path]).load_data()
+#         index = VectorStoreIndex.from_documents(documents)
+#         query_engine = index.as_query_engine()
+
+#
 # Plug in vision transformer:
 # - using subprocess, run vis-transformer.py on the uploaded image (modular)
 # - catch the output vegetable detections
@@ -129,19 +153,6 @@ def handle_image_upload(file_obj):
     vegs = detect_vegetables(temp_path)
     os.remove(temp_path)  
     return vegs
-
-#
-# Depreciated?
-
-def get_files_from_input(file_objs):
-    if not file_objs:
-        return []
-    if isinstance(file_objs, str):
-        return [file_objs]
-    if isinstance(file_objs, list):
-        return [f.name if hasattr(f, 'name') else f for f in file_objs]
-    return []
-
 
 #
 # Document uploading:
@@ -207,6 +218,9 @@ def load_documents(file_objs):
     except Exception as e:
         return f"Error loading documents: {str(e)}"
     
+#
+#
+#
 
 def add_to_rag(season, ingredients, restrictions):
     global rag_data, query_engine
@@ -247,9 +261,15 @@ def add_to_rag(season, ingredients, restrictions):
     except Exception as e:
         return f"Error updating rag: {str(e)}"
 
+
 # is this being used anywhere??
-def embed_query(text):
-    return nvidia_embed_model.embed([text])[0]
+# def embed_query(text):
+#     return nvidia_embed_model.embed([text])[0]
+
+
+#
+#
+#
 
 def stream_response(message, history):
     global query_engine
@@ -289,7 +309,7 @@ def stream_response(message, history):
             "- 'Are you cooking for anyone with dietary restrictions?'\n"
         )
 
-        # If you have message history, flatten it here:
+        # Flatten message history
         flattened_history = ""
         for m in history[-2:]:  # last 2 messages only
             flattened_history += f"{m['role'].capitalize()}: {m['content']}\n"
@@ -302,6 +322,7 @@ def stream_response(message, history):
             + f"User: {message}\n"
             + "Now please continue the conversation in character."
         )
+        print(type(full_prompt))
 
         response = query_engine.query(full_prompt)
 
@@ -317,6 +338,9 @@ def stream_response(message, history):
             {"role": "assistant", "content": f"Error processing query: {str(e)}"}
         ]
 
+#
+#
+#
 
 def list_system_data_files():
     try:
@@ -324,6 +348,10 @@ def list_system_data_files():
         return [f for f in files if f.endswith((".txt", ".pdf"))]
     except Exception as e:
         return [f"Error: {e}"]
+
+#
+#
+#
 
 def read_selected_file(filename):
     if not filename:
@@ -356,15 +384,27 @@ def read_selected_file(filename):
     else:
         return gr.update(value="Unsupported file type."), gr.update(visible=False)
 
-    
+#
+# 
+#   
 
 def show_pdf():
     file_path = "./about_us.pdf"
     return gr.update(visible=True), gr.update(visible=True)
 
+#
+#
+#
+
 def hide_pdf():
     return gr.update(visible=False), gr.update(visible=False)
 
+
+#
+##
+# Front end
+##
+#
 with gr.Blocks(css=".gradio-container {background-color: #8A9A5B;} h1 {text-align: center; font-family: 'Georgia', cursive, sans-serif;}") as demo:
 
     with gr.Row():
@@ -440,6 +480,10 @@ with gr.Blocks(css=".gradio-container {background-color: #8A9A5B;} h1 {text-alig
             outputs=[pdf_viewer, close_pdf_button],
             queue=False
         )
+
+#
+##
+#
 
 if __name__ == "__main__":
   result = initialize_rag('./system_data')
