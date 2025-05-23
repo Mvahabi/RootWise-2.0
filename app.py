@@ -17,6 +17,8 @@ from pdf2image import convert_from_path
 # Initialize global variables
 query_engine = None
 user_rag_last_modified = 0
+user_rag_file = None  
+
 
 global nvidia_embed_model 
 nvidia_embed_model = NVIDIAEmbedding(
@@ -94,25 +96,54 @@ def initialize_rag(file_path):
 #
 # Handling userRAG
 #
-# def initialize_user_rag():
-#     # create and add <user>RAG to the database
-#     # somehow make this be how we are titling it? need to send it to the other functions when the user inputs their name
 
-# def user_rag_updated(file_path):
-#     global user_rag_last_modified
-#     current_time = os.path.getmtime(file_path)
-#     if current_time != user_rag_last_modified:
-#         user_rag_last_modified = current_time
-#         return True
-#     return False
+def user_rag_updated(file_path):
+    global user_rag_last_modified
+    current_time = os.path.getmtime(file_path)
+    if current_time != user_rag_last_modified:
+        user_rag_last_modified = current_time
+        return True
+    return False
 
-# def user_rag(file_path):
-#     global query_engine, rag_store
 
-#     if query_engine is None or user_rag_updated():
-#         documents = SimpleDirectoryReader(input_files=[file_path]).load_data()
-#         index = VectorStoreIndex.from_documents(documents)
-#         query_engine = index.as_query_engine()
+def user_rag(file_path):
+    global query_engine
+    if not os.path.exists(file_path):
+        return
+    if query_engine is None or user_rag_updated(file_path):
+        documents = SimpleDirectoryReader(input_files=[file_path]).load_data()
+        vector_store = FaissVectorStore(faiss_index=faiss.IndexFlatL2(1536))
+        index = VectorStoreIndex.from_documents(
+            documents,
+            vector_store=vector_store,
+            embed_model=nvidia_embed_model
+        )
+        query_engine = index.as_query_engine()
+
+
+def set_user_name(name):
+    global user_rag_file
+    if not name:
+        return "Please enter a valid name."
+    os.makedirs(rag_store, exist_ok=True)
+    user_rag_file = os.path.join(rag_store, f"{name}RAG.txt")
+    if not os.path.exists(user_rag_file):
+        with open(user_rag_file, 'w') as f:
+            f.write(f"{name}'s RAG session initialized.\n")
+    return f"File {name}RAG.txt ready."
+
+
+def append_to_user_rag(entry):
+    global user_rag_file
+    if not user_rag_file:
+        return "Please enter your name first."
+    with open(user_rag_file, 'a') as f:
+        f.write(f"{entry}\n")
+    try:
+        user_rag(user_rag_file)
+        return "Entry added and index updated."
+    except Exception as e:
+        return f"Entry added, but update failed: {str(e)}"
 
 #
 # Plug in vision transformer:
@@ -406,6 +437,19 @@ def hide_pdf():
 ##
 #
 with gr.Blocks(css=".gradio-container {background-color: #8A9A5B;} h1 {text-align: center; font-family: 'Georgia', cursive, sans-serif;}") as demo:
+
+    with gr.Row():
+        user_name = gr.Textbox(label="Enter Your Name")
+        name_submit = gr.Button("Initialize My RAG File")
+        name_status = gr.Textbox(label="Status", interactive=False)
+
+        user_entry = gr.Textbox(label="Write to Your File")
+        entry_submit = gr.Button("Submit Entry")
+        entry_status = gr.Textbox(label="Result", interactive=False)
+
+        name_submit.click(set_user_name, inputs=[user_name], outputs=[name_status])
+        entry_submit.click(append_to_user_rag, inputs=[user_entry], outputs=[entry_status])
+
 
     with gr.Row():
         gr.Image( type="filepath", value="./frontpage.png", visible=True)
