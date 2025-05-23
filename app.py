@@ -31,6 +31,13 @@ client = OpenAI(
 rag_data = []
 rag_store = './system_data'  # redundant? (this is specified in main(), feels like should be one variable)
 
+#
+# Initialize rag database:
+# - load in all documents in system_data, catch errors
+# - create the faiss vector store
+# - initialize "sentence splitter" to handle large documents, apply this as a transformation for the vector store
+#
+
 def initialize_rag(file_path):
     global query_engine, rag_store
 
@@ -64,7 +71,6 @@ def initialize_rag(file_path):
         # Create Faiss vector store
         vector_store = FaissVectorStore(faiss_index=faiss.IndexFlatL2(1536))
 
-        # Pass it explicitly
         splitter = SentenceSplitter(chunk_size=400, chunk_overlap=50)
 
         index = VectorStoreIndex.from_documents(
@@ -84,6 +90,12 @@ def initialize_rag(file_path):
         print(f"Failed to initialize query engine. Exception: {str(e)}")
         return f"Failed to initialize query engine. Exception: {str(e)}"
 
+#
+# Plug in vision transformer:
+# - using subprocess, run vis-transformer.py on the uploaded image (modular)
+# - catch the output vegetable detections
+# - call add_to_rag() so that the vegetables detected are added the the user's 'ingredients'
+#
 
 def detect_vegetables(image_path):
     try:
@@ -101,6 +113,12 @@ def detect_vegetables(image_path):
         return vegs if vegs else ["No vegetables detected."]
     except subprocess.CalledProcessError as e:
         return [f"Error: {e.stderr.strip()}"]
+    
+#
+# Handle image input for vegetable detection:
+# - handles error inputs
+# - calls detect_vegetables()
+#
 
 def handle_image_upload(file_obj):
     if not hasattr(file_obj, "name"):
@@ -112,6 +130,8 @@ def handle_image_upload(file_obj):
     os.remove(temp_path)  
     return vegs
 
+#
+# Depreciated?
 
 def get_files_from_input(file_objs):
     if not file_objs:
@@ -121,6 +141,13 @@ def get_files_from_input(file_objs):
     if isinstance(file_objs, list):
         return [f.name if hasattr(f, 'name') else f for f in file_objs]
     return []
+
+
+#
+# Document uploading:
+# - handles errors
+# - adds uploaded files to the RAG database
+#
 
 def load_documents(file_objs):
     global query_engine, rag_store
