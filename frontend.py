@@ -47,14 +47,14 @@ h1 {text-align: center; font-family: 'Georgia', cursive, sans-serif;}
             detect_button.click(handle_image_upload, inputs=[veg_image], outputs=[detected_output])
 
 
-        with gr.Column(elem_classes="section"):
-            gr.Markdown("## Chat with the Assistant")
-            chatbot = gr.Chatbot(type='messages')
-            msg = gr.Textbox(label="Ask a Question")
-            clear = gr.Button("Clear Chat")
-            msg.submit(stream_response, inputs=[msg, chatbot], outputs=[chatbot], queue=True)
-            msg.submit(lambda: "", outputs=[msg])
-            clear.click(lambda: None, None, chatbot, queue=False)
+    with gr.Column(elem_classes="section"):
+        gr.Markdown("## Chat with the Assistant")
+        chatbot = gr.Chatbot(type='messages')
+        msg = gr.Textbox(label="Ask a Question")
+        clear = gr.Button("Clear Chat")
+        msg.submit(stream_response, inputs=[msg, chatbot], outputs=[chatbot], queue=True)
+        msg.submit(lambda: "", outputs=[msg])
+        clear.click(lambda: None, None, chatbot, queue=False)
 
     with gr.Row():
         with gr.Column(elem_classes="section"):

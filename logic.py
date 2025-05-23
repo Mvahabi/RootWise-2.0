@@ -159,13 +159,17 @@ def detect_vegetables(image_path):
             capture_output=True, text=True, check=True
         )
         lines = result.stdout.splitlines()
-        vegs = []
+        vegs = ""
         for line in lines:
             if line.startswith("Identified Vegetables:"):
                 items = line.split(":", 1)[1].strip(" []\n")
                 vegs = [v.strip("' ") for v in items.split(',') if v.strip()]
-        add_to_rag(season='', ingredients=str(vegs), restrictions='')                    # could use some add_to_rag() improvement
-        return vegs if vegs else ["No vegetables detected."]
+
+        if vegs:
+            for veg in vegs:
+                add_to_rag(season='', ingredients=veg.strip(" [']\n"), restrictions='')                    # could use some add_to_rag() improvement
+        return vegs if vegs else "No vegetables detected."
+    
     except subprocess.CalledProcessError as e:
         return [f"Error: {e.stderr.strip()}"]
     
@@ -183,7 +187,11 @@ def handle_image_upload(file_obj):
     shutil.copyfile(file_obj.name, temp_path)
     vegs = detect_vegetables(temp_path)
     os.remove(temp_path)  
-    return vegs
+
+    output = ""
+    for veg in vegs:
+        output += f"{veg}, "
+    return output
 
 #
 # Document uploading:
@@ -255,28 +263,37 @@ def load_documents(file_objs):
 
 def add_to_rag(season, ingredients, restrictions):
     global rag_data, query_engine
-    file_path = 'system_data/user_rag.txt'
 
-    new_entry = {
-        "season": season,
-        "ingredients": ingredients.split(','),
-        "restrictions": restrictions.split(',')
-    }
-    rag_data.append(new_entry)
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
-    with open(file_path, 'a') as file:
-        if season:
-            file.write(f"Season: {new_entry['season']}\n")
-        if ingredients:
-            file.write(f"Ingredients: {', '.join(new_entry['ingredients'])}\n")
-        if restrictions:
-            file.write(f"Dietary Restrictions: {', '.join(new_entry['restrictions'])}\n")
+    base_dir = 'system_data'
+    os.makedirs(base_dir, exist_ok=True)
 
+    season_path = os.path.join(base_dir, 'user_rag_seasons.txt')
+    ingredients_path = os.path.join(base_dir, 'user_rag_ingredients.txt')
+    restrictions_path = os.path.join(base_dir, 'user_rag_restrictions.txt')
+
+    for path in [season_path, ingredients_path, restrictions_path]:
+        open(path, 'a').close()
+
+    # Write entries to separate files
+    if season:
+        with open(season_path, 'w') as f:
+            f.write(f"Season: {season}\n")
+
+    if ingredients:
+        with open(ingredients_path, 'a') as f:
+            f.write(f"Ingredients: {ingredients}\n")
+
+    if restrictions:
+        with open(restrictions_path, 'a') as f:
+            f.write(f"Dietary Restrictions: {restrictions}\n")
+
+    # Load documents from all three files
     documents = []
-    documents.extend(SimpleDirectoryReader(input_files=[file_path]).load_data())
+    for path in [season_path, ingredients_path, restrictions_path]:
+        documents.extend(SimpleDirectoryReader(input_files=[path]).load_data())
 
     if not documents:
-        return f"No new data here." 
+        return "No new data here."
 
     try:
         vector_store = FaissVectorStore(faiss_index=faiss.IndexFlatL2(1536))
@@ -288,14 +305,9 @@ def add_to_rag(season, ingredients, restrictions):
         query_engine = index.as_query_engine()
 
         return "Input added to RAG database!"
-    
     except Exception as e:
-        return f"Error updating rag: {str(e)}"
+        return f"Error updating RAG: {str(e)}"
 
-
-# is this being used anywhere??
-# def embed_query(text):
-#     return nvidia_embed_model.embed([text])[0]
 
 
 #
@@ -313,8 +325,19 @@ def stream_response(message, history):
         return
 
     try:
+        rag_path = f"./system_data/{user_rag_file}.txt"
+        if os.path.exists(rag_path):
+            with open(rag_path, "r") as f:
+                rag_contents = f.read().strip()
+        else:
+            rag_contents = ""
+
+        rag_excerpt = rag_contents[:800]  # truncate to ~500 tokens max (adjust as needed)
+
         prompt = (
-            "You are a friendly and sustainability-minded farmers market assistant. "
+            "You are a warm, sustainability-minded farmers market assistant.\n\n"
+            "The user has a personalized knowledge base. Prioritize the following excerpts from this:"
+            f"{rag_excerpt}\n\n"
             "Your job is both to: "
             "\n *prompt the user* to make environmentally conscious food choices by asking them helpful, specific questions"
             "\n *make meaningful recommendations by sharing information about* sustainable cooking practices, "
@@ -322,7 +345,7 @@ def stream_response(message, history):
             "Explain how certain actions can reduce waste, save money, or benefit health. Anticipate the user's needs and offer gentle suggestions, not just questions."
             "\n\nYour overall goals are:\n"
             "- Recommend recipes based on seasonal ingredients, user preferences, and allergies\n"
-            "- Offer food scrap tips: composting, freezing leftovers, zero-waste cooking (e.g., carrot top pesto)\n"
+            "- Offer food scrap tips: composting, freezing leftovers, zero-waste cooking\n"
             "- Share food donation resources (e.g., Food Not Bombs drop-offs)\n"
             "- Give food storage tips (e.g., storing greens with paper towels)\n"
             "- Briefly mention food-as-medicine properties (e.g., turmeric for inflammation)\n\n"
@@ -340,21 +363,23 @@ def stream_response(message, history):
             "- 'Are you cooking for anyone with dietary restrictions?'\n"
         )
 
-        # Flatten message history
-        flattened_history = ""
-        for m in history[-2:]:  # last 2 messages only
-            flattened_history += f"{m['role'].capitalize()}: {m['content']}\n"
+        # Only include the latest user/assistant message for context
+        truncated_history = ""
+        if history:
+            last_messages = history[-2:]  # Only last exchange
+            for m in last_messages:
+                truncated_history += f"{m['role'].capitalize()}: {m['content'][:300]}\n"  # Clip each to 300 chars max
 
-        # Combine all parts into one prompt string:
+        # Construct final prompt
         full_prompt = (
             prompt
-            + "\nHere is the recent conversation:\n"
-            + flattened_history
-            + f"User: {message}\n"
-            + "Now please continue the conversation in character."
+            + "\nRecent context:\n"
+            + truncated_history
+            + f"User: {message[:300]}\n"
+            + "Now continue the conversation in character."
         )
-        print(type(full_prompt))
 
+        # Send to query engine
         response = query_engine.query(full_prompt)
 
         yield history + [
@@ -362,12 +387,12 @@ def stream_response(message, history):
             {"role": "assistant", "content": str(response)}
         ]
 
-
     except Exception as e:
         yield history + [
             {"role": "user", "content": message},
             {"role": "assistant", "content": f"Error processing query: {str(e)}"}
         ]
+
 
 #
 #
