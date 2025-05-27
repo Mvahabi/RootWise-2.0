@@ -258,7 +258,10 @@ def load_documents(file_objs):
         return f"Error loading documents: {str(e)}"
     
 #
-#
+# Handles adding ingredients, season information, and dietary restriction inputs
+# - defines the file path and makes a file in the system_data directory if ther isn't one already
+# - writes entries out to the file
+# - links it to the faiss vectorstore db
 #
 
 def add_to_rag(season, ingredients, restrictions):

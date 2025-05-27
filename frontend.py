@@ -50,7 +50,7 @@ h1 {text-align: center; font-family: 'Georgia', cursive, sans-serif;}
     with gr.Column(elem_classes="section"):
         gr.Markdown("## Chat with the Assistant")
         chatbot = gr.Chatbot(type='messages')
-        msg = gr.Textbox(label="Ask a Question")
+        msg = gr.Textbox(label="Ask a Question", placeholder="give me recipe")
         clear = gr.Button("Clear Chat")
         msg.submit(stream_response, inputs=[msg, chatbot], outputs=[chatbot], queue=True)
         msg.submit(lambda: "", outputs=[msg])
