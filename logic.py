@@ -314,7 +314,9 @@ def add_to_rag(season, ingredients, restrictions):
 
 
 #
-#
+# Handles conversation with the LLM
+# - unpacks and references specific files in system_data
+# - 
 #
 
 def stream_response(message, history):
