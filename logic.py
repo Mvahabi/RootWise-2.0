@@ -95,6 +95,7 @@ def initialize_rag(file_path):
 
 #
 # Handling userRAG
+# Three functions
 #
 
 def user_rag_updated(file_path):
@@ -422,18 +423,19 @@ def stream_response(message, history):
 
 
 #
-#
-#
+# This function only checks if the files in the system are the right type
+# depreciated I think?
+# #
 
-def list_system_data_files():
-    try:
-        files = os.listdir(rag_store)
-        return [f for f in files if f.endswith((".txt", ".pdf"))]
-    except Exception as e:
-        return [f"Error: {e}"]
+# def list_system_data_files():
+#     try:
+#         files = os.listdir(rag_store)
+#         return [f for f in files if f.endswith((".txt", ".pdf"))]
+#     except Exception as e:
+#         return [f"Error: {e}"]
 
 #
-#
+# 
 #
 
 def read_selected_file(filename):
@@ -468,7 +470,7 @@ def read_selected_file(filename):
         return gr.update(value="Unsupported file type."), gr.update(visible=False)
 
 #
-# 
+# This just shows the "about us" page
 #   
 
 def show_pdf():
@@ -476,7 +478,7 @@ def show_pdf():
     return gr.update(visible=True), gr.update(visible=True)
 
 #
-#
+# this puts away the about us page
 #
 
 def hide_pdf():
