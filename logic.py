@@ -19,7 +19,6 @@ query_engine = None
 user_rag_last_modified = 0
 user_rag_file = None  
 
-
 global nvidia_embed_model 
 nvidia_embed_model = NVIDIAEmbedding(
         model="nvidia/nv-embedqa-e5-v5",
@@ -312,8 +311,6 @@ def add_to_rag(season, ingredients, restrictions):
     except Exception as e:
         return f"Error updating RAG: {str(e)}"
 
-
-
 #
 # Handles conversation with the LLM
 # - unpacks and references specific files in system_data
@@ -421,7 +418,6 @@ def stream_response(message, history):
             {"role": "assistant", "content": f"Error processing query: {str(e)}"}
         ]
 
-
 #
 # This function only checks if the files in the system are the right type
 # depreciated I think?
@@ -483,4 +479,3 @@ def show_pdf():
 
 def hide_pdf():
     return gr.update(visible=False), gr.update(visible=False)
-
