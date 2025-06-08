@@ -121,7 +121,6 @@ def user_rag(file_path):
         )
         query_engine = index.as_query_engine()
 
-
 def set_user_name(name):
     global user_rag_file
     if not name:
