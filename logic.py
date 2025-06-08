@@ -13,6 +13,7 @@ import time
 import subprocess
 import uuid
 from pdf2image import convert_from_path
+import requests
 
 # Initialize global variables
 query_engine = None
@@ -199,6 +200,8 @@ def handle_image_upload(file_obj):
 # - adds uploaded files to the RAG database
 #
 
+from llama_index.readers.file import PDFReader
+
 def load_documents(file_objs):
     global query_engine, rag_store
 
@@ -229,15 +232,20 @@ def load_documents(file_objs):
 
             shutil.copyfile(file_obj.name, dest_path)
             print(f"Copied file to: {dest_path}")
+            print(f"Processing file: {file_name} (ext: {os.path.splitext(file_name)[1]})")
 
             try:
                 reader = SimpleDirectoryReader(
                     input_files=[dest_path],
-                    file_extractor={".pdf": PDFReader()}
+                    file_extractor={
+                        ".pdf": PDFReader(),
+                        ".txt": None
+                    }
                 )
                 docs = reader.load_data()
                 print(f"Loaded {len(docs)} documents from {file_name}")
                 documents.extend(docs)
+
             except Exception as e:
                 print(f"Error loading {file_name}: {e}")
 
@@ -256,7 +264,7 @@ def load_documents(file_objs):
 
     except Exception as e:
         return f"Error loading documents: {str(e)}"
-    
+
 #
 # Handles adding ingredients, season information, and dietary restriction inputs
 # - defines the file path and makes a file in the system_data directory if ther isn't one already
@@ -317,6 +325,23 @@ def add_to_rag(season, ingredients, restrictions):
 # - 
 #
 
+def call_nvidia_chat(messages, model="meta/llama3-70b-instruct"):
+    url = f"https://integrate.api.nvidia.com/v1/chat/completions"
+    headers = {
+        "Authorization": f"Bearer {os.getenv('NGC_API_KEY')}",
+        "Content-Type": "application/json"
+    }
+    payload = {
+        "model": model,
+        "messages": messages
+    }
+
+    response = requests.post(url, headers=headers, json=payload)
+    if response.status_code != 200:
+        raise Exception(f"Error: {response.status_code} - {response.json()}")
+    return response.json()["choices"][0]["message"]["content"].strip()
+
+
 def stream_response(message, history):
     global query_engine
 
@@ -335,7 +360,7 @@ def stream_response(message, history):
         else:
             rag_contents = ""
 
-        rag_excerpt = rag_contents[:800]  # truncate to ~500 tokens max (adjust as needed)
+        rag_excerpt = ' '.join(rag_contents.split()[:120])
 
         ingredient_path = f"./system_data/given_ingredients.txt"
         if os.path.exists(ingredient_path):
@@ -359,33 +384,22 @@ def stream_response(message, history):
             allergies = ""
 
         prompt = (
-            "You are a warm, sustainability-minded farmers market assistant.\n\n"
-            "The user has a personalized knowledge base. Prioritize the following excerpts from this:"
+            "You are a warm, sustainability-minded farmers market assistant who supports eco-conscious food choices with kindness, patience, and wisdom.\n\n"
+            "**IMPORTANT:** If the user message is a simple greeting (e.g., 'hi', 'hello', 'hey'), just respond with a short, friendly reply like 'Hi there!' and wait for them to continue. Do not offer suggestions or ask follow-up questions yet.\n\n"
+            "If the user gives more context, then:\n"
+            "- Offer helpful ideas from ./system_data and their knowledge base (prioritize this excerpt):\n"
             f"{rag_excerpt}\n\n"
-            "Your job is both to: "
-            "\n *prompt the user* to make environmentally conscious food choices by asking them helpful, specific questions"
-            "\n *make meaningful recommendations by sharing information about* sustainable cooking practices, "
-            f"seasonal (current season: {season}) and local produce, food preservation techniques, zero-waste habits, and community food resources. "
-            "Explain how certain actions can reduce waste, save money, or benefit health. Anticipate the user's needs and offer gentle suggestions, not just questions."
-            "\n\nYour overall goals are:\n"
-            "- Recommend recipes based on seasonal ingredients, user preferences, and allergies\n"
-            "- Offer food scrap tips: composting, freezing leftovers, zero-waste cooking\n"
-            "- Share food donation resources (e.g., Food Not Bombs drop-offs)\n"
-            "- Give food storage tips (e.g., storing greens with paper towels)\n"
-            "- Briefly mention food-as-medicine properties (e.g., turmeric for inflammation)\n\n"
-
-            "RULES:\n"
-            f"- NEVER suggest recipes that include ingredients the user is allergic to: {allergies}\n"
-            f"- try to use the ingredients that the user has:  {ingredients}"
-            "- DO NOT overwhelm the user with information all at once\n"
-            "- End each turn by asking a short, kind, useful question to understand what the user has or needs (NEVER ASK MORE THAN ONE)\n"
-            "- Use concise, personable bullet points when explaining things\n"
-            "- Be warm, respectful, and never contradict the user\n"
-            "- Always prioritize sustainability and functional medicine\n\n"
-
-            "EXAMPLE FIRST PROMPTS:\n"
-            "- 'What ingredients do you have on hand today?'\n"
-            "- 'Are you cooking for anyone with dietary restrictions?'\n"
+            f"- Focus on sustainable cooking, seasonal produce (current season: {season}), zero-waste practices, and food-as-medicine wisdom\n"
+            "- Share only 2–3 relevant suggestions at a time, using clear bullet points if needed\n"
+            "- Ask at most one kind, helpful follow-up question — only if the user provides enough info\n\n"
+            f"NEVER suggest recipes with ingredients the user is allergic to: {allergies}\n"
+            f"PRIORITIZE ingredients the user has: {ingredients}\n"
+            "DO NOT overwhelm the user. Be clear, kind, and wait for more info if needed.\n"
+            "Your main responsibilities are:\n"
+            "- Gently offer information from ./system_data and the user's knowledge base to share practical and heartfelt wisdom\n"
+            "- Recommend ideas based on sustainable cooking, seasonal produce (current season: {season}), food preservation, and zero-waste practices\n"
+            "- Explain how actions like reducing food waste or preserving herbs can save money, support health, or build community\n"
+            "- Prompt the user to share details through soft, specific, *single* questions — only when necessary, and never in a rushed way\n\n"
         )
 
         # Only include the latest user/assistant message for context
@@ -395,17 +409,22 @@ def stream_response(message, history):
             for m in last_messages:
                 truncated_history += f"{m['role'].capitalize()}: {m['content'][:300]}\n"  # Clip each to 300 chars max
 
+        rag_retrieval = query_engine.query(message)
+
         # Construct final prompt
         full_prompt = (
             prompt
+            + f"Here is relevant information from the system_data documents:\n{rag_retrieval}\n\n"
             + "\nRecent context:\n"
             + truncated_history
             + f"User: {message[:300]}\n"
             + "Now continue the conversation in character."
         )
-
-        # Send to query engine
-        response = query_engine.query(full_prompt)
+        
+        response = call_nvidia_chat([
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": full_prompt}
+        ])
 
         yield history + [
             {"role": "user", "content": message},
@@ -423,12 +442,12 @@ def stream_response(message, history):
 # depreciated I think?
 # #
 
-# def list_system_data_files():
-#     try:
-#         files = os.listdir(rag_store)
-#         return [f for f in files if f.endswith((".txt", ".pdf"))]
-#     except Exception as e:
-#         return [f"Error: {e}"]
+def list_system_data_files():
+    try:
+        files = os.listdir(rag_store)
+        return [f for f in files if f.endswith((".txt", ".pdf"))]
+    except Exception as e:
+        return [f"Error: {e}"]
 
 #
 # 

@@ -6,5 +6,5 @@ if __name__ == "__main__":
   print(f"RAG init result: {result}")
 
   demo.queue()
-  demo.launch(server_name="0.0.0.0", server_port=7860)
+  demo.launch(server_name="0.0.0.0", server_port=7862)
   print("herelo")

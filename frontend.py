@@ -61,7 +61,7 @@ h1 {text-align: center; font-family: 'Georgia', cursive, sans-serif;}
             gr.Markdown("## Data Tools")
 
             gr.Markdown("### Load Custom Documents")
-            file_upload = gr.File(label="Upload Documents", file_types=[".txt", ".pdf"])
+            file_upload = gr.File(label="Upload Documents", file_types=['.txt', '.pdf'], file_count="multiple")
             load_button = gr.Button("Load Documents")
             load_button.click(load_documents, inputs=[file_upload], outputs=gr.Textbox(label="Status"))
 
