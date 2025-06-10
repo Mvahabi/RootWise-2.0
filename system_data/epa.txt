@@ -1,0 +1,1873 @@
+
+
+   Food: Too Good to Waste
+
+         Implementation Guide
+
+              and Toolkit
+O pPA                          February 2016
+
+
+ United States
+ Environmental Protection                       r*^rt r i f f\i n A
+ Agency                            D30-r-lD-014-A
+-------
+The information contained in this Food: Too Good to Waste Implementation Guide and Toolkit is
+intended to inform the public and does not establish or affect legal rights or obligations. Links
+to non-EPA sites do not imply any official EPA endorsement of, or responsibility for, the
+opinions, ideas, data or products presented at those sites, or guarantee the validity of the
+information provided.
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+
+
+
+
+
+
+
+
+Table of Contents
+
+
+
+
+Section                                                          Page
+
+
+
+1.0     Introduction                                                 2
+
+
+
+
+2.0     Small-Scale Campaign Strategies and Behavior Change Tools            5
+
+
+
+
+3.0     Small-Scale Campaign Implementation Guidance                     8
+
+
+
+
+4.0     Scaling Up from Small- to Broad-Scale Campaign                     13
+
+
+
+
+5.0     Acknowledgements                                           14
+
+
+
+
+
+ Appendix A   Pilot Implementation Descriptions                          16
+
+
+
+
+
+ Appendix B   Small-Scale Campaign Planning Guide                       19
+
+
+
+
+
+ Appendix C   Customizing Get Smart: Take the Challenge                   20
+
+
+
+
+
+ Appendix D   Toolkit                                               23
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+1.0    Introduction
+
+1.1    Purpose
+
+The Food: Too Good to Waste (FTGTW) Implementation Guide and Toolkit is designed for
+community organizations, local governments, households and others interested in reducing
+wasteful household food management practices. The Implementation Guide is designed to
+teach local governments and community organizations how to implement a Food: Too Good
+to Waste campaign in their community using the Toolkit.
+
+The Toolkit, which is found in Appendix D, provides behavior change and outreach tools
+designed to assist individuals and households to implement strategies to reduce wasted food
+in their homes. The FTGTW tools use community-based social marketing principles to reduce
+wasted food from households. A Food: Too Good to Waste campaign provides the tools in the
+Toolkit to families and individuals to help them keep food out of landfills and  more money in
+their pockets.
+
+1.2    The Issue of Wasted Food
+
+In the United States, approximately 31 percent or 133 billion pounds of the 430 billion pounds
+of the available food supply at the retail and consumer levels in 2010 went uneaten. The total
+value of this food loss is estimated at $161 billion.1
+
+In 2013, Americans generated more than 37 million tons  of food waste, 95 percent of which
+was thrown away into landfills or incinerators.2 Wasted food in landfills rots and becomes a
+significant source of methane, a powerful greenhouse gas. Landfills account for approximately
+18 percent of all methane emissions in the U.S.3 Diverting wasted food from landfills reduces
+greenhouse gas emissions. A number of other, preferable options are available for this wasted
+food. Would-be-wasted-food can be donated to feed people, or composted to feed the soil.
+
+A significant portion of this wasted food is wholesome and edible. On a per capita basis, 429
+pounds of edible food went uneaten. This is astounding, considering that in 2013, 14.3 percent
+of U.S. households were food insecure at some time during the year,4 meaning that all
+household members did  not have access at all times to enough food for an active, healthy
+lifestyle.
+
+Food truly is too good to waste.
+
+1.3     Get Started!
+1 Buzby, J. Hyman, J. Wells, H. (2014). The Estimated Amount, Value, and Calories of Postharvest Food Losses at the
+Retail and Consumer Levels in the United States.
+2 EPA, OSWER. (2015). Advancing Sustainable Materials Management: 2013 Fact Sheet.
+3 US EPA. Inventory of U.S. Greenhouse Gas Emissions and Sinks: 1990-2012. April 2014
+4 Coleman-Jenson, A. Gregory, C. Singh, A. (2014). Household Food Security in the United States in 2013
+                                           2
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+If your organization is interested in reducing wasted food from households, use this
+Implementation Guide to help you implement a small-scale Food: Too Good to Waste
+campaign to gain experience and to find out what works best in your community. Then,
+based on what you learn with the small-scale campaign, adjust as appropriate and scale it up
+into a broad-based campaign!
+
+This Implementation Guide will help you learn how to create a FTGTW campaign in your
+community or your organization, and includes information and tools that provide ideas for
+designing your program and getting it started.
+
+1.4   What's Inside?
+
+This guide provides you with detailed information on:
+•  Designing a small-scale campaign to help you learn what works in your community.
+•  Using the tools available to you in the FTGTW toolkit most effectively.
+•  Engaging, recruiting, and retaining participants.
+•  Providing great information through effective outreach and education.
+•  Collecting your results and analyzing them in a meaningful way.
+•  Scaling up an initial successful small-scale campaign into a broader campaign.
+•  Examples from early pilots across the nation that will help you design your own
+   campaign.
+
+1.5     FTGTW Design
+
+EPA used Community-Based Social Marketing (CBSM) principles and information gathered
+through background research and focus groups to design the FTGTW strategies and tools in
+this Guide and Toolkit. The FTGTW tools use CBSM principles to reduce wasted food from
+households. CBSM uses the power of social groups to encourage changes in behavior toward
+a common goal. EPA piloted the FTGTW strategies and tools with a number of communities
+and then refined them based on feedback from the pilots.
+
+1.6   Community-Based Social Marketing Principles
+
+The community based social marketing framework differs from more well-known behavior
+change models in its emphasis on the social dimensions of human behavior. Organizations
+considering a small-scale FTGTW campaign are encouraged to use CBSM  principles whenever
+possible. Additional  information on CBSM is available at
+
+1.7     Small-Scale Campaign Objectives
+
+A FTGTW campaign aims to engage households in efforts to reduce wasted  food.  A small-
+scale campaign helps organizations interested in wasted food  reduction gain knowledge of
+the wasted food issue and the CBSM approach to behavioral change. This experience is
+crucial to success in scaling up the small-scale campaign to a broader campaign. This
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+Implementation Guide focuses primarily on small-scale campaign design and
+implementation, but also includes supplemental information on implementing a broader
+campaign.
+
+The small-scale campaign's measurement objectives are two-fold:
+•  Determine Small-Scale Campaign Reach and Effectiveness:  Did the campaign result in the
+   desired behavior changes? This includes assessments of participation rates and strategy
+   and tool effectiveness.
+•  Determine Small-Scale Campaign Impact: Did the campaign result in quantifiable
+   reductions in wasted food?
+
+ 1.8    FTGTW Campaign Design Principles
+
+ A FTGTW campaign aims to address the needs of a community by using CBSM principles and
+ should be designed with the following principles in mind:
+
+•  Remove or minimize barriers to preferred behaviors and emphasize benefits: Making it
+   easy for people to measure their waste at the individual household level will objectively
+   demonstrate the opportunity to reduce waste and save money, resulting in greater
+   participant retention rates. Providing scales can  help quantify the opportunity to reduce
+   waste.
+•  Focus on target populations: Strategies and outreach must be tailored for your intended
+   audience. The strategies and tools in the toolkit  have been designed specifically for
+   particular target populations that have the potential to achieve large waste reductions. The
+   choice of other target populations may require message and tool modifications.
+•  Engage at the community level: Behavior change is strongly influenced by membership in
+   communities or social networks. Seek commitments to engage in behavior change in social
+   groups, for example in neighborhood associations, community groups, church groups, and
+   social networks.
+•  Emphasize personal contact: Campaigns that use personal contact to engage participation
+   have greater success in recruiting and retaining participants. As noted by the Australian
+   Environment Protection Authority in New South Wales carrying out the Love Food Hate
+   Waste campaign (wwAftyovaf^^                      "Media and communications helps
+   to create the 'buzz' around the issue yet direct outreach/education provides householders
+   with the skills and capacity to make the change."
+•  Create feedback: Practice alone doesn't change behavior. Creating feedback is essential.
+   Measuring the amount of food going to waste provides feedback by making wasted food
+   and lost money visible and tangible.
+•  Make the social norm visible: The FTGTW campaign's goal is to create a new social norm
+   that reducing household wasted food is a community value. Giving the new norm visibility,
+   for example, by publicizing participation rates, will give further momentum to a campaign.
+•  Contextualize preferred behaviors: To motivate and sustain behavioral changes, draw the
+   linkages between household practices and environmental and social issues on a broader
+   level through stories and other means.
+•  Speak to community values: Adapt messages and tools to the needs of the community.
+                                         4
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+    Engage the community—even as early as the design phase. Conduct outreach through
+    social networks and webs of relationships important to target audiences.
+•   Leverage existing resources: Call on communities to be resourceful in utilizing existing
+    networks and organizations. This encourages engagement of community-based partners
+    in campaign implementation.
+•   Design for depth and breadth: To achieve significant reductions in wasted food at the
+    community level, target behaviors that have a significant impact at the household level
+    (depth) and engage a significant percentage of the general population (breadth).
+•   Collect evidence for campaign design: Measurement provides a solid evidence base to
+    demonstrate the effectiveness of the  FTGTW strategies and tools. This information will
+    help in scaling up the small-scale campaign to a broad-scale campaign.
+
+2.0    FTGTW Small-scale Campaign Strategies and Behavior Change Tools
+
+The FTGTW Toolkit identifies five behavior changes that have significant  potential to reduce
+wasted food in households, identifies strategies to achieve these behavior changes, and
+provides tools based on the strategies to  help people make the behavioral changes. The
+tools in the FTGTW Toolkit are designed for community organizations to  provide to
+community members as part of their FTGTW small-scale campaign. Community members
+may include households, consumers, residents, social networks and individuals. In this guide
+the strategies and associated tools have been refined to reflect findings on tool
+effectiveness from FTGTW pilot campaigns. Two additional outreach tools are included to
+support the general strategy of raising awareness and  education. The strategies and
+associated tools are identified in the chart below. The tools are found in  the Toolkit in
+Appendix D.
+Food: Too Good To Waste Strategies and Tools
+Strategy
+Get Smart: See
+How Much Food
+(and Money) You
+Are Throwing Away
+Smart Shopping:
+Buy What You Need
+Smart Storage:
+Keep Fruits and
+Vegetables Fresh
+Smart Prep: Prep
+Now, Eat Later
+Smart Saving: Eat
+What You Buy
+Tool
+Get Smart: Take the
+Challenge
+Smart Shopping: Shop
+with Meals in Mind
+Smart Storage: Fruit
+and Vegetable Storage
+Tips
+Smart Prep: Prep
+Now, Eat Later
+Smart Saving: "Eat
+First" Sign
+Action
+Behavior
+Change
+Behavior
+Change
+Behavior
+Change
+Behavior
+Change
+Behavior
+Change
+Purpose
+Actively engage participants in
+learning about how they manage
+food in their household; measuring
+progress
+Encourage participants to plan their
+food needs ahead of time and only
+purchase what they will use
+Provide information for participants
+to safely store their food so it is good
+for the meals they planned
+Provide tips on saving time in the
+kitchen by preparing foods ahead of
+time
+Visually remind participants to eat
+foods while they are fresh
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+
+Awareness and
+Education
+
+Fact Sheet:
+"Consider the
+Tomato"
+Workshop
+Presentation
+
+Outreach
+Outreach
+
+Educate participants and potential
+participants
+Educate participants and potential
+participants
+2.1    Get Smart: Take the Challenge
+
+The FTGTW Challenge asks participants to track their wasted food generation for a period
+of two weeks or more before adopting new FTWGW strategies. By tracking the food they
+discard in their homes, participants become aware of the often surprisingly large
+quantities of food they are wasting. The Challenge actively engages participants in learning
+about how they manage food in their household. Early campaigns showed that awareness
+plays an integral role in motivating participants to adopt new strategies to reduce waste.
+Waste aversion is a strong psychological motivator, but most households are not aware of
+how much they waste and may even question if they waste food.
+
+In addition to raising awareness about wasted food behaviors in participating households, this
+tool presents an opportunity for organizations to evaluate the small-scale campaign's
+effectiveness and impact.
+
+The Get Smart: Take the Challenge tool consists of instructions and worksheets for
+households to collect and measure how much food they waste over the course of a two to six
+week challenge. The  worksheets are used to track wasted food.
+
+In the FTGTW Challenge, households are asked to measure the amount of food they waste.
+Depending on the goals  of the Challenge, wasted  food may be defined to include both
+preventable and non-edible wasted food, or only preventable wasted food.
+•  Preventable wasted  food is food grown or purchased (and prepared or not) but not eaten
+   because it is spoiled  or not needed, and then thrown away.
+•  Non-edible wasted food includes items such as egg shells, bones, fruit pits, and non-edible
+   peels - food parts that are typically discarded during food preparation or consumption.
+Wasted food can be  measured  on either a volume or weight basis or both. In general, the
+volume method is more  easily accomplished in most households. However, the weight
+method is more accurate. Campaigns may choose to provide scales as an incentive for
+weight measurement.
+The length of time of the Challenge, the choice between measuring waste by volume or by
+weight, and the choice between tracking and collecting data on preventable and/or non-
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+edible waste will depend on the implementing organization's objectives. There is a trade-off
+between keeping measurement simple and how much data you wish to collect (see data
+collection in Section 3.4).
+
+Most challenges have averaged four to six weeks in length. The suggested length is six weeks
+- two weeks to establish a measuring routine and four weeks to test different strategies and
+create new habits. The length, however, can be varied based on campaign objectives. If the
+purpose of the Challenge is to raise household awareness of wasted food in their homes, two
+weeks may be a sufficient length of time.
+
+Keep participation convenient. Recruitment and retention may be greater if scales are
+offered for weighing wasted food.
+
+2.2     Smart Shopping: Shop with Meals in Mind
+
+The Smart Shopping: Shop With Meals in Mind tool provides an easy-to-use template for
+making shopping lists that prevent food from being wasted. It is designed to encourage meal
+planning and create awareness around how much food will be needed for upcoming meals.
+This tool is an example of priming, where people are  more likely to do something when  they
+are asked — in this case, buying only what they reasonably expect to use until their next
+shopping trip. The tool also focuses on the cost-saving benefits of using already purchased
+food, communicated by the phrase, "Shop your kitchen first." This tool helps simplify food
+management through meal planning.
+
+2.3     Smart Storage:  Fruit and Vegetable Storage Tips
+
+The Smart Storage: Fruit and Vegetable Storage Tips tool is a visual prompt to remind
+participants how to keep produce fresh. Prompts are particularly useful when designed  to
+engage people in positive behaviors and presented in close proximity to where the action takes
+place. The prompt provides useful information on keeping produce fresh. It is printed in bright
+colors on a half sheet suitable for posting on the refrigerator. The prompt can also be
+distributed at tabling and community workshop events. In FTGTW pilots  many households
+found this guide to be very effective.
+
+2.4   Smart Prep: Prep Now, Eat Later
+
+The Smart Prep: Prep Now, Eat Later tool provides consumers helpful tips on preparing
+perishable foods soon after shopping. Prepared perishables are easier to use, making
+them more likely to be used later on, thus reducing waste and saving time and money.
+
+2.5     Smart Saving: "Eat First"
+
+The Smart Saving: "Eat First" tool is designed as a visual prompt. Households are  encouraged
+to designate an area in the refrigerator for food that  should be eaten relatively soon to
+prevent spoiling, and posting the prompt as a visual reminder.
+                                         7
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+2.6    Awareness and Education Fact Sheet: "Consider the Tomato"
+
+The "Consider the Tomato" tool is designed to attract attention to and raise awareness of the
+issue of wasted food.  It tells a story about why wasted food matters and provides context for
+wasted food as an environmental and economic issue. The fact sheet can be handed out at
+community events and venues, such as farmers markets and local grocery stores. It can also
+be used as part of tabling at community events, which provides an opportunity for one-on-
+one interaction with the public and potential FTGTW small-scale campaign participants.
+Displayed in larger size, the fact sheet can be used to attract people to the table to learn more.
+
+2.7    Awareness and Education: Workshop Presentation
+
+The Workshop Presentation tool is designed for FTGTW campaign organizers to use to make
+presentations at workshops or community meetings. The presentation can be used to
+introduce the FTGTW campaign and the FTGTW tools to community members and to recruit
+participants.
+
+3.0    Small-Scale Campaign Implementation Guidance
+
+In general, implementing a FTGTW small-scale campaign involves several overlapping steps:
+design, materials preparation, outreach and recruitment, monitoring and support, data
+collection, and analyzing and sharing results. To have a successful campaign, it is important to
+consider the design elements discussed below.
+
+Insight and ideas for FTGTW small-scale campaign design and implementation can be found in
+Appendix A.
+
+3.1    Small-Scale Campaign Design
+
+Small-scale campaign design involves addressing the following design elements:
+
+•  Objectives (Section 3.1.1)
+•  Target Population and Size (Section 3.1.2)
+•  Targeted Strategies and Tools (Section 3.1.3)
+•  Resources (Section 3.1.4)
+•  Time Frame and Small-Scale campaign Duration (Section 3.1.5)
+•  Outreach and Community Partners (Section 3.3)
+•  Information Collection and Analysis (Section 3.4)
+
+Appendix B provides a checklist of questions to inform the design of your small-scale campaign.
+
+3.1.1   Identifying Implementing Organization's Objectives
+
+In order to gather internal support for a FTGTW campaign, organizations should consider how
+                                         8
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+the campaign aligns with their organization's long-term objectives.  Examples of well-aligned
+longer-term objectives include reducing solid waste management costs, reducing carbon
+footprint or building a sustainable food system. Clear objectives will also help to allocate
+small-scale campaign resources effectively.
+
+Depending on the organization, it may take up to several months to obtain leadership buy-in
+and allocate the necessary resources for a FTGTW campaign.
+
+3.1.2    Selecting Target Population and Sample Size
+
+The target population refers to the broader demographic that the implementing
+organization hopes to impact with the FTGTW campaign. The sample size refers to the
+number of households that actively participate in the small-scale campaign.  Generally,
+the target population size is larger than the sample size.
+
+A number of considerations go into selecting a target population and sample size, including:
+    •   the demographics of the population the campaign is designed to reach,
+    •   the type and  amount of resources the implementing organization has available,
+    •   the time frame  planned for the campaign, and
+    •   the implementing organization's objectives for the campaign.
+
+
+The sample size for the small-scale campaign should be large enough to draw conclusions
+relative to the implementing organization's objectives for a broad-based campaign.
+
+In selecting your target population, be aware that the FTGTW messaging and strategies were
+crafted for two principal target populations: families with young children, and young adults
+(ages approximately from 18 to 30). If your organization chooses to focus on an alternative
+demographic you should consider whether the existing tools and messaging are appropriate
+for your selected demographic.
+
+As noted in Section 1.7 on design principles, to achieve significant reductions in wasted food at
+the community level, it is necessary to engage and sustain behaviors that have a substantial
+impact at the household level  (depth) as well as engage a significant percentage of the general
+population in adopting the behaviors (breadth).
+
+3.1.3    Choosing Targeted Behaviors and Tools
+
+The FTGTW toolkit identifies five behavior changes with significant potential to reduce wasted
+food in households and provides tools that can be used to achieve these behavioral changes, as
+well as to raise awareness of the issue of wasted food. Organizations designing a FTGTW small-
+scale campaign may  choose to focus on  one or more of the behavior change strategies, or may
+use them all.
+
+It is recommended that careful consideration be given to choosing the strategies to include in
+
+                                          9
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+
+
+the small-scale campaign based on budget, intended reach and objectives.
+
+3.1.4 Allocating Resources
+
+The FTGTW toolkit provides the essential materials for a FTGTW small-scale campaign.
+Implementing organizations should carefully consider what supporting resources, including
+staff and volunteer time, are available or could be provided by partners and other
+organizations.  Planners should develop a budget of funds and other resources.
+
+Implementation costs include printing costs, costs of measurement bags used in the Challenge
+(if provided), and staff time. In addition, providing incentive items to engage individual
+households may be considered and would require resources.  For example, food scales may be
+used as incentives. Scales also provide accurate data on the impact of the behavior changes.
+
+Staff time for a small-scale campaign may include time spent:
+       •  gaining organizational approval,
+       •  modifying the tools for local use,
+       •  preparing materials,
+       •  conducting outreach and follow-up, and
+       •  evaluating and disseminating small-scale campaign results.
+
+For more information on how much time might be required for various tasks refer to the
+FTGTW pilot descriptions in Appendix A.
+
+In many cases local government will take the lead in implementing the FTGTW campaign.
+Other community organizations may also take the lead, may participate as partners, and may
+provide additional resources.
+
+Potential partners include:
+    •   Interested government programs may include waste management, climate change
+       response, and food programs.
+    •   Civic or community groups and non-profits may have constituencies who are in the
+       target audience or who have an interest in related issues. These organizations are
+       able to do outreach through their social networks.
+    •   Food purveyors (restaurants, groceries) and other businesses may assist with
+       outreach and also provide incentive goods.
+    •   Farmers markets, community supported agriculture (CSA) businesses and municipal
+       waste management companies are also likely partners.
+    •   Schools may wish to integrate information on wasted food prevention into their
+       curriculum and colleges and universities often support sustainability programs aimed
+       at the young adult demographic.
+                                         10
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+3.1.5 Timing and Length of Small-Scale Campaign
+
+The overall length of a small-scale campaign may range from four to eight months. This
+includes time for planning, adapting and preparing materials, outreach and recruiting
+households, engaging households during the FTGTW Challenge, follow-up and analysis, and
+results dissemination. The pilot descriptions in Appendix A include information on how long it
+took organizations to perform various tasks.
+
+It is recommended that FTGTW campaigns not be scheduled to coincide with major holiday
+periods as this is likely to reduce consistent participation.
+
+3.2 Tools Preparation
+
+Time should  be allotted for adapting the FTGTW behavior change and outreach tools to the
+organization's specific needs. It is important to begin sufficiently in advance of your outreach
+start date. Tool modifications should be carefully vetted to ensure that they are consistent with
+the organization's objectives and provide meaningful feedback.
+
+The choice of measurement tools for the Get Smart: Take the Challenge is an important
+consideration. The waste collection container should preferably be transparent with markings
+on the outside of the container. Appendix C discusses potential modifications to the Get Smart:
+Take the Challenge measurement bag tool, instructions and worksheet.
+
+Particular attention should be given to modifying the instructions to households for taking the
+challenge. Even  small changes can have unintended consequences. For example, discarding  the
+instruction to measure cumulative waste at the end of each week could prevent comparing  or
+averaging the amounts from different households.
+
+3.3 Outreach, Recruitment and Retention
+
+A major task of FTGTW campaign implementation is outreach and recruitment. Outreach
+plans should address appropriate communication channels, venues and community partners
+for reaching the intended target audience. Two CBSM principles that govern successful
+outreach and challenge recruitment plans are delivering at the community level and
+emphasizing personal contact. A good rule of thumb in household recruitment and retention
+is to engage early and often.
+
+The value of personal contact in influencing people to attempt new behaviors is well
+established in the CBSM literature. The likelihood of a commitment to adopt new behaviors is
+much greater in the case of personal contact. This is even more strongly reinforced when the
+person making the contact has influence in the person's social network. Personal recruitment
+can be reinforced through additional forms of communication, such as mail and email.
+
+Implementing organizations are encouraged to think about outreach to target audiences
+through social networks (or webs of relationships) in addition to through traditional media.
+                                         11
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+Engaging households through participant gatherings/workshops that include food and/or
+beverages may be a successful strategy. In addition to providing an excellent opportunity to
+present wasted food strategies and distribute tools, these gatherings reinforce the social
+nature of the FTGTW campaign by encouraging behavior change through membership and
+network commitment. Workshop participants can be encouraged to share personal
+experiences with wasted food, which is a form of social learning. Suggested  settings and key
+engagement steps for recruiting participants are outlined in Figure 1.
+Figure 1: Key engagement steps for recruiting challenge participants.
+                              Sign people and
+                             record participation
+                                              In person
+                                              Through organization
+                                                                Class Project
+                                                                Through social media
+               FTGTW
+              Challenge
+                              Instruct people
+                             and provide tools
+                        \\
+                         \
+In person
+                                             Through email
+Workshops
+
+Tabling
+Tabling at community events presents an opportunity to recruit challenge participants. Clear
+objectives for tabling efforts will help in preparation, including likely numbers of public
+interactions. You may want to contact the event organizers to learn about expected event
+traffic. You may wish to share  materials such as the storage guide, shopping list template
+and/or the Challenge awareness/measurement tool, as well as a more general informational
+piece on your program or on the wasted food issue.
+
+A key way to increase household retention is to reduce barriers to participation. How the
+implementing organization decides to do this depends on available resources. Besides
+providing printed behavior change tools, organizations may consider distributing scales to
+measure wasted food, and/or bins in which to place the measurement bags. Incentives may
+also play a  role in increased retention rates.  For example, offering grocery coupons or prizes
+may encourage participation.
+3.4     Follow-up Information and Analysis
+                                          12
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+Information that may guide and improve campaigns are described below.
+•  Outreach: Record your observations about the effectiveness of outreach methods used.
+•  Tabling: Record how many people attended the event and the number of table
+   engagements by type. Examples include: how many people took a handout; how many had
+   a conversation with table staff/volunteers; how many signed up for the Challenge.
+•  Workshop: Record how many people were invited to the workshop, what you know
+   about their demographics, and how many actually attended the workshop.
+
+
+Additional information used by implementing organizations may include:
+ •  Observational and demographic information from household participants for calculating
+    effectiveness.
+ •  Household measurements of wasted food amounts for calculating impact.
+
+By conducting a FTGTW Challenge, organizations can determine the campaign's impact at the
+household level. The goal is to determine whether the campaign resulted in a quantifiable
+reduction in wasted food for the participating households relative to their baseline amounts.
+Organizations can calculate impact by comparing the average amount wasted in the initial
+weeks to the average for the final week.
+
+Participant observations are a rich source of qualitative data that can be used to convey the
+significance of wasted food awareness to a wider audience and thereby create a new social
+standard around behaviors that reduce wasted food.
+
+For clear results, organizations should carefully plan their household data collection prior to
+launching the challenge. It is recommended that the organization develop a spreadsheet for
+recording data linked to the reporting mechanism, for example, a web-based survey service.
+Challenge participants will find it easier to report results if data collection instructions are
+reviewed with them at the start of the Challenge. Higher retention rates may be associated
+with frequent data collection.
+
+4.0     Moving from Small- to Broad-Scale Campaign
+
+When designing a broad-scale campaign,  consider how the small-scale campaign results
+inform the direction and specific content of the campaign. In a broad-scale campaign, the
+organization's long-term objectives also come into play. How wasted food prevention
+complements and integrates with existing programs and helps to meet the organization's
+goals should be considered.
+
+Good  messaging is an important element in the successful integration of FTGTW messages with
+existing  programs. For example, in integrating wasted food prevention with compost collection
+                                         13
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+programs, wasted food prevention should be discussed first, before composting, to give waste
+prevention the proper emphasis.
+
+Scaling small-scale campaigns up to broad-scale campaigns involves moving from a depth
+approach to one that emphasizes both breadth and depth. This involves raising the visibility of
+the wasted food issue at the community level,  usually with some type of broad-based media
+and outreach activities.
+
+To gauge the overall effectiveness of a broad-scale campaign the organization should
+assess the community's awareness of wasted food as an issue and identify appropriate
+measures of behavior change and reduced waste.
+
+5.0    Acknowledgements
+
+The original 2012 Food: Too Good To Waste Toolkit, on which this document is based, was
+developed for the United States Environmental Protection Agency under contract with
+EcoPraxis, Colehour+Cohen and Tetra Tech EMI; Contract #EP-W-13-002.
+
+The EPA acknowledges the outstanding support and collaboration of the West Coast Climate
+Forum in sharing their experiences, which informed the development of the original
+document. Special thanks go to members of the West Coast Climate Forum from state and
+local governments who supported and shared their experience.
+
+The following are acknowledged for their invaluable contributions:
+
+    Dr. Viki Sonntag, EcoPraxis
+   Julie Colehour and Amanda Godwin, Colehour+ Cohen
+   Joanna Canepa and Tommie Jean, Tetra Tech EMI
+    Project and Planning Team Lead: Ashley Zanolli, EPA Region 10
+    EPA Project Planning Team:
+   o  EPA Region 10:  Theresa Blaine, Christina Colt, Bill Dunbar, Lisa McArthur, Sandra
+      Poulson, Viccy Salazar, and Melissa Winters, Daniel  Brody (NNEMS fellow), Megan
+      Curtis-Murphy, McKenna Morrigan, and  Veronica Pardo and Dore Mangan (intern)
+   o  EPA Region 9: Shannon Davis and Andre Villasenor
+   o  EPA Headquarters (OSWER): Linda Barr, John Cross, and Jean Schwab
+   State and Government Partners:
+   o  Minnestota Pollution Control Agency, Madalyn Cioci and Colleen Hetzel
+   o  Oregon Dept. of Environmental Quality,  David Allaway and Leslie Kochan
+   o  Washington Department of Agriculture,  Chery Sullivan
+   o  Washington Department of Ecology, Michelle Andrews and Mary Harrington
+    Local Government Partners
+   o  Boulder County (CO), Lisa Friend
+   o  City of Chula Vista (CA),  David Didonato and Lynn France
+   o  City of Gresham (OR), Karen Guillen-Chapman and Tristen Whitehead
+   o  City of Oakland (CA), Mark Gigliardi and  Wanda Redic
+                                         14
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+  o   City of Portland (OR), Lauren Morris, Alicia Polacok, and Arianne Sperry
+  o   City of Redmond (WA), Stacy Auer
+  o   City of Santa Monica (CA), Shannon Parry
+  o   City of Seattle (WA), Jeanie Boawn and Sharon Lerman
+  o   City of Tacoma (WA), Jetta Antonakos
+  o   City of Vancouver (WA), Tanya Gray
+  o   King County (WA), Josh Marx and Karen May
+  o   Oregon Metro (OR), Jennifer Erikson and Meg Lynch
+  o   Palo Alto (CA), Wendy Hediger and Matt Krupp
+  o   San Benito County (CA), Lisa Jensema and Mandy Rose
+  o   Seattle Public Utilities (WA), Veronica Fincher and Carl Woestwin
+  o   Snohomish County (WA), Sego Jackson
+  o   Thurston County (WA), Brian Stafki
+
+   Other acknowledgements
+
+  o   Eureka Recycling (MN Grantee), Lynn Hoffman
+  o   FoodShift, Dana Frasz
+  o   Goteborgs Universitet, Gothenburg, Sweden, Alexandra Lavers
+  o   GRACE Communications Foundation, Chris Hunt
+  o   Green Cities CA, Carol Misseldine
+  o   International Council for Local Environmental Initiatives (ICLEI), Monica Gilchrist
+  o   Jonathan Bloom, author
+  o   Kupu, HI, Nichole Chatterson
+  o   Naropa University, Santiago Giraldo Anduaga
+  o   Natural Resources Defense Council (NRDC), Dana Gunders
+  o   UK WRAP (United Kingdom Waste and Resources Action Programme), Andrew Parry
+                                        15
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+The following community and local government pilot descriptions share insight and ideas for
+FTGTW small-scale campaign design and implementation. The experiences of these, and other
+pilots contributed to the design of FTGTW and the descriptions include observations about
+successes and barriers the communities encountered. Note that all of the FTGTW pilots chose to
+introduce all the strategies in connection with the FTGTW Challenge.
+
+KinR County. WashinRton
+
+Objectives: Reducing wasted food is a priority for King County in its effort to achieve Zero Waste
+and climate action goals, since food accounts for 14 percent of the County's consumption-based
+Greenhouse Gas emissions. The specific aim of the King County pilot was to test the effectiveness
+of the pilot messaging and tools in reducing wasted food and to gauge the impact of a CBSM
+campaign based on these results.
+
+Target Population and Sample Size: The target audience for the King County implementation
+was families with small children. The pilot was introduced to 110 families with a child enrolled in
+the 4th grade at the public elementary school in Fall City, a town between rural and urban zones
+with a  population of approximately 2,000.
+
+Targeted Behaviors: During the pilot,  all five waste  prevention behaviors were introduced to
+the families.
+
+Tools Used in Pilot: This pilot used both the Shopping List Template and the Fruit and Storage
+Guide tools. They also structured  the pilot around a modified Challenge as described under the
+subheading "Implementation Choices." In addition, King County developed several other tools
+including: a Top Five Ways to Waste Less Food information sheet; Packing a Waste Free Lunch tip
+sheet;  a blog to keep families informed and motivated; a Food: Too Good to Waste daily tip
+PowerPoint presentation by the teacher; and a Learn More resource list.
+
+Community Partners: King County partnered with a local elementary school through their
+Green  Schools  Program. The marketing firm of Colehour and Cohen who have special
+expertise in CBSM campaigns in developing and implementing their pilot assisted them.
+
+Length of Pilot: The participant engagement period lasted approximately two months,
+including time to recruit and assess and acknowledge the families' participation. The length of
+the Challenge was five weeks.
+
+Implementation Choices: The invitation to participate in the Get Smart: Take the Challenge
+was sent via email to the families of the 4th grade children.  A King County representative then
+visited  the classroom to explain to the students why wasted food is bad for the environment
+and household economics and distributed the measurement tools (bag and weekly
+worksheets). The teachers incorporated  new messages into curricula each week with daily
+
+                                          16
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+tips/facts. The first week waste collection served to establish a baseline for the volume of food
+going to waste.  Both preventable and non-edible wasted food items were collected in the
+same measurement bag to simplify the process. At the start of the second week of the pilot, all
+five pilot strategies were introduced. Thereafter, tools were introduced one at a time at one-
+week intervals.  Students were also presented a daily wasted food reduction tip. All families
+who completed the challenge were given recognition certificates and entered in a drawing for
+grocery store gift cards.
+
+Observations: The tools were well  received and gave King County confidence in the overall
+messaging. Students and parents were especially influenced and surprised by how much food
+(and money) could be saved as a result of simple strategies. As a result of this finding, the county
+will emphasize potential savings in their broad-scale campaign. On average, families that
+participated all five weeks reduced  their wasted food by 28 percent. However, a "challenge"
+where  people are required to measure waste and report is great for raising awareness but is
+onerous. Incentives may help to reduce this barrier to participation. In  King County teachers
+assigned  homework and the county offered a prize for participation, but still many families  did
+not follow through. During the pilot, King County didn't have a lot of local resources to give
+people, so in the full-scale campaign they are putting emphasis on improving the website for King
+County and including more info about why  it's important.
+
+Honolulu, Hawaii
+
+Objectives: The City and County of Honolulu (CCH) are interested in wasted  food management
+solutions that would both  lower the costs of landfilling as well as offset the cost of importing
+food to the island. The Honolulu pilot sought to test CBSM wasted food reduction strategies and
+tools including a cookbook with  local chef-contributed  recipes and wasted food prevention tips.
+It also aimed to see if there was a connection between preventable wasted food and the number
+of meals outside the home. The cookbook is available at
+Target Population and Sample Size: Out of approximately 210 emails sent, 17 households were
+recruited to participate in a four-week challenge. The principal audience was young adults
+although two households had individuals in their fifties and two households had children. The
+average age of participants was 34.
+
+Targeted Behaviors: All five behaviors were tested but the "Buy What You Need" strategy
+was combined with the "Make a Shopping List with Meals in Mind" strategy and relabeled
+"Smart Shopping."  In addition, households were encouraged to test recipes for using up
+leftover ingredients.
+
+Tools Used in Pilot: The Workshop Presentation was used to introduce the Get Smart: Take
+the Challenge to the household participants.  Behavior support tools included:  a food storage
+guide developed by Eureka Recycling; a menu planner used in the Australian campaign; an "Eat
+First" prompt; and a cookbook containing recipes for using up leftover ingredients developed by
+local chefs.
+                                           17
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+Community Partners: Alexander Lavers researched, directed and managed the pilot in
+fulfillment of a Master degree in Environmental Sciences from the University of Gothenburg,
+Sweden.
+
+Length of Pilot: The total elapsed time of the pilot was four months. Recruitment took
+approximately three weeks, while the length of the Challenge was four weeks. Adapting,
+preparing and purchasing materials for the challenge took three weeks as did the data analysis.
+In addition, the project organizer spent several months coordinating the cookbook's
+development with the contributing restaurants, the graphic designer, and the county.
+
+Implementation Choices: Recruitment was made by email using personal contacts in two
+social networks, the  Recycling Branch of the Refuse Division of CCH  and a Honolulu running
+club. Challenge participants were asked to measure preventable and non-edible wasted food
+for two weeks after which they measured both types of waste for an additional two weeks
+while trying wasted food reduction strategies. Non-pilot study cookbook recipients will
+receive an option to  fill out a survey on their experience with the cookbook/toolkit; in return
+for their responses they will receive a coupon to a restaurant featured in the cookbook.
+
+Observations:  Participation and retention was facilitated by early and frequent engagement.
+Pilot participants saw a 19.6 percent reduction in preventable wasted food in weeks using wasted
+food prevention strategies compared to baseline weeks. Households that did not see a reduction
+in wasted food had irregular events that affected their success. There was significant variability in
+the wasted food collection data possibly related to age.  Older participants started with less
+wasted food. Households with members aged 28 to 34 achieved the largest reduction but started
+with more waste.
+                                          18
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+Appendix B: Food: Too Good to Waste Small-Scale Campaign Planning Guide
+You can use the following questions as a checklist for small-scale campaign planning.
+
+Objectives (Section 3.1.1)
+   1. How is this small-scale campaign relevant to your community/government organization's
+   goals and objectives?
+   2. What are your small-scale campaign goals and objectives?
+   3. What is your experience with CBSM?
+   4. Who within your organization needs to give approval to the small-scale campaign?
+
+Target Population and Sample Size (Section 3.1.2)
+   1. Who is your target audience and why?
+   2. How large is your sample size?
+   3. Does the sample size reflect an acceptable trade-off between depth and breadth relative
+   to your organization's objectives?
+   4. Do the sample demographics reflect your target audience in the larger population?
+
+Targeted Strategies and Tools (Section 3.1.3):
+   1. What strategies and tools are you choosing to target?
+
+Resources (Section 3.1.4):
+   1. What is the proposed budget for the small-scale campaign?
+   2. How much staff time is allocated for the small-scale campaign?
+   3. What additional tools and resources do you have to support implementation?
+   4. Who are your community partners, if any?
+
+Time Frame and Small-Scale campaign Implementation Length (Section 3.1.5):
+   1. What is your timeline/timeframe for implementing this small-scale campaign?
+   2. How long is your small-scale campaign implementation (period in which you engage
+   households)?
+
+Outreach and Community Partners (Section  3.3):
+   1. What is your outreach and recruitment strategy?
+   2. How will you keep participants engaged in the small-scale campaign?
+   3. How often do you plan to engage directly with participants?
+   4. Will the small-scale campaign be implemented as part of an existing program(s)? How
+   will this affect outreach?
+   5. Have you identified community partners to help with this effort? How will they help?
+   6. Are you offering incentives as part of your outreach or engagement strategy?
+
+Data Collection (Section 3.4):
+   1. How much data will you collect?
+   2. What types of data will you collect?
+   3. How does this data serve your small-scale campaign objectives?
+   4. What systems do you need to put in place to collect this data?
+                                         19
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+         C: Customizing Get Smart: Take the
+
+This appendix discusses potential modifications to the Get Smart: Take the Challenge
+measurement bag tool, instructions and worksheet. Any changes in wording of the instructions
+should be carefully vetted to ensure that they are consistent with the desired outcomes.
+The default instructions for taking the FTGTW Challenge are:
+
+       •  Households measure their waste for six weeks with a two week baseline period.
+       •  Households collect and measure preventable waste.
+       •  Households measure both the volume and weight of wasted food.
+       •  The community partner provides households a kitchen scale.
+       •  Households can try any strategy or set of strategies.
+       •  The community partner is the contact for assistance and to return results.
+
+Length of Challenge: The tool, instructions and worksheet will all  need to be modified if you
+select a different time length  for the challenge or for the baseline data collection period. A
+minimum of six weeks is recommended to establish patterns but four-week challenges have
+been successful.  A longer period will help to solidify patterns but may affect your retention
+rate.
+
+Type of Wasted Food Collected: The instructions will need to be modified if you choose to have
+households collect something other than the preventable fraction.  Collecting the preventable
+fraction focuses the  household on that portion of wasted food  they can prevent. Collecting all
+wasted food may present an opportunity to compare the results to per capita averages.
+
+Types of Measurements Taken:  The instructions  and worksheet will need to be modified if you
+elect not to take  weight measurements.
+
+Number and Types of Strategies Tested: The instructions will need to  be modified if you choose
+to focus on select strategies or change the set of  strategies. Also, if you are introducing new
+tools you will want to change the list at the bottom of the first page of the instructions.
+
+Kitchen Scale Provided: The instructions and the worksheet will need to be modified if scales are
+not provided.  However, if you plan to have the household measure weights with their own
+scales, then you  will just need to remove the scales from the list of  materials provided at the
+bottom of the first page of the instructions.
+
+Contact for Assistance:  There is a space in the instructions for  the community partner to put
+in their contact information.
+                                          20
+-------
+Implementation Guide and Toolkit - Food: Too Good to Waste
+
+
+
+
+
+
+
+        D:
+
+
+
+
+   •  Get Smart: Take the Challenge
+
+
+
+
+   •  Smart Shopping: Shop with Meals in Mind
+
+
+
+
+   •  Smart Storage: Fruit and Vegetable Storage Tips
+
+
+
+
+   •  Smart Prep: Prep Now, Eat Later
+
+
+
+
+   •  Smart Saving:  "Eat First" Sign
+
+
+
+
+   •  Fact Sheet: "Consider the Tomato"
+
+
+
+
+   •  Workshop Presentation
+                                      21
+-------
+  GET SMART:  TAKE  THE  CHALLENGE
+
+    KEEP GOOD FOOD FROM GOING TO WASTE
+
+
+WHAT IS THE CHALLENGE?
+Did you know that in 2013 Americans threw 35 million tons of food into landfills and incinerators? Research
+shows that nearly everyone wastes more than they think they do. The Food: Too Good to Waste Challenge
+will help you figure out how much food is really going to waste in your home and what you can do to waste
+less. By making small shifts in how you shop for, prepare, and store food, you can save time and money, and
+keep the valuable resources used to produce and distribute food from going to waste!
+
+WHAT DO YOU NEED?
+You only need a few basic tools to get started, which include 1) a pen/pencil, 2) paper or printed worksheets,
+3) small garbage bags, and 4) a small scale (optional).
+
+GET SMART: SEE HOW MUCH FOOD (AND MONEY) YOU ARE REALLY THROWING AWAY
+
+WEEKS 1 & 2: Measure how much food your family wastes in a week and record the volume and/or weight.
+
+WEEKS 3 through 5: Try out one or more of the smart strategies listed below while continuing to measure how
+much goes to waste each week. Keep notes on what works to reduce food waste and what doesn't.
+   •  Smart Shopping: Buy What You Need - Make a shopping list with the Meals-ln-Mind Shopping List
+      template based on how many meals you expect to eat at home before your next shopping trip. By
+      buying no more than what you expect to use, you will be more likely to use it up and keep it fresh.
+   •  Smart Storage: Keep Fruits and Vegetables Fresh - Store produce so it stays fresh longer with the help
+      of the Fruits and Vegetable Storage Guide.
+   •  Smart Prep: Prep Now, Eat Later - By preparing perishable foods as soon as possible, preferably post
+      shopping, you'll make it easier to serve snacks and meals later in the week, saving time, effort and
+      money.
+   •  Smart Saving: Eat What You Buy - This involves being mindful of leftovers and old ingredients that
+      need using up. The "Eat First" prompt can be used  to designate an area  in your refrigerator for
+      leftovers and food that won't keep long.
+
+Week 6: Measure and record your final weekly food waste amount. See how much food (and money) you
+saved compared to weeks one and two.
+
+GET READY
+You can find all the printed materials you need to take the FTGTW Challenge available for download at
+http://www2.epa.gov/sustainable-management-food
+
+They include:
+      This instruction sheet which includes the recording worksheet.
+      Meals in Mind Shopping List Template
+      Fruit and Vegetable Storage Guide
+      Eat Me First Prompt
+-------
+  GET SMART:  TAKE THE  CHALLENGE
+
+    KEEP GOOD FOOD FROM GOING TO WASTE  .
+
+TIPS FOR TAKING THE CHALLENGE
+   1.  Explain the challenge to members of your household/community and ask for their participation.
+   2.  At the start of each week, line one paper bag with a green compostable bag. Over the course of the
+      week, place all your PREVENTABLE food waste into the bag. Discard NON-EDIBLE food in the usual
+      manner. (PREVENTABLE food waste  is both food you bought to eat but has since spoiled and food that
+      was prepared but not eaten and was then thrown away. NON-EDIBLE food waste is everything you
+      wouldn't normally eat, such as banana peels, egg shells, apple cores and chicken bones.)
+   3.  At the end of each week, measure both the weight and the volume of food waste in the bag. Record
+      both the volume and the weight for  the week on the attached worksheet. Once you get started, it
+      should take no more than 15 minutes a week to measure and record your food waste.
+   4.  If the bag fills before the end of seven days, weigh or record the volume of the full bag and record how
+      many days you collected food in that bag. Then begin collection in a new bag. At the end of the week,
+      total your weight and/or volume of food waste for the entire week.
+   5.  After you record the weight and volume of food wasted for the week, dispose of the collection bag,
+      including food, appropriately and as acceptable for your collection service, by composting, through
+      organics collection or in the garbage.
+   6.  Except for the new strategies you try starting in week 3, keep to your usual routine as much as possible
+      during the challenge. For example, unless you regularly clean out your freezer, do not clean it
+      throughout the challenge.
+   7.  At the end of week 6, compare your totals for weeks 1 and 2 to weeks 3 through 6 and see how much
+      food you saved from going to waste! Many families have reduced their food waste by 25% or more.
+ADDITIONAL WASTE COLLECTION TIPS:
+      If you are concerned about leakage, then you might use a plastic bag as a second liner.
+   •  If concerned about odor, you can clip the top of the bag shut; or you can start using a new bag mid-
+      week, as long as you track the total volume of waste for the whole week.
+      Do not collect liquid waste such as soup or food-soiled paper products.
+AFTER THE CHALLENGE
+Once you've completed the challenge, share your successes and lessons learned with other individuals or
+organizations who may be interested in reducing wasted food.
+
+For more information on sustainable management of food, please visit
+http://www.epa.gov/sustainable-management-food
+k                                                                      United States
+                                                                      Environmental Protection
+                                                                      Agency
+                                                           EPA-530-F-014-B
+&EPAI
+EPA-530-F-014-
+February 2016
+-------
+  GET  SMART:  TAKE  THE CHALLENGE
+    KEEP GOOD  FOOD  FROM GOING TO WASTE
+RECORDING WORKSHEET
+WEEK1
+Start Date:
+     Bag Volume  	
+     # of days collected
+Day of Week:
+	Weight
+WEEK 2
+Start Date:
+     Bag Volume  	
+     # of days collected
+Day of Week:
+	Weight
+Totals-Weeks land 2
+	Bag Volume
+   . Weight
+                       NOTES (WHAT GOES TO WASTE AND WHY)
+                       NOTES (WHAT GOES TO WASTE AND WHY)
+Averages - Weeks 1 and 2
+Total Volume H- 2 =	Total Weight H- 2 :
+WEEKS
+Start Date:
+     Bag Volume  	
+     # of days collected
+Day of Week:
+	Weight
+WEEK 4
+Start Date:
+     Bag Volume  	
+     # of days collected
+Day of Week:
+	Weight
+WEEKS
+Start Date:
+     Bag Volume  	
+     # of days collected
+Day of Week:
+	Weight
+WEEKS
+Start Date:
+     Bag Volume  	
+     # of days collected
+Day of Week:
+	Weight
+Totals - Weeks 3 through 6
+	Bag Volume  	Weight
+                       NOTES (WHAT WORKS, WHAT DOESN'T)
+                       NOTES (WHAT WORKS, WHAT DOESN'T)
+                       NOTES (WHAT WORKS, WHAT DOESN'T)
+                       NOTES (WHAT WORKS, WHAT DOESN'T)
+             Averages - Weeks 3 through 6
+             Total Volume 4- 4 =	Total Weight 4- 4 =
+-------
+      SMART SH
+                   p  with Me
+                    in  Mind
+• Think about how many meals you'll eat at home this week and how long before
+ your next shopping trip.
+
+
+• Next to fresh items on the list, note the quantity you need or number of meals
+ you're buying for.
+
+
+• Shop your kitchen first and note items you already have.
+
+
+
+
+FOOD ITEM             AMOUNT NEEDED            ALREADY HAVE
+
+
+Salad greens              Lunch for a week            Enough for one lunch
+
+2% milk                 Gallon                  NONE
+   United States
+   Environmental Protection
+   Agency
+                                          EPA-530-16-F-014-C
+                                          February 2016
+-------
+        SMART STORAGE:
+    Know which fruits and vegetables stay fresh
+        longer inside or outside the fridge.
+
+    By storing them for maximum freshness, they
+         will taste better and last longer.
+&EPA
+United States
+Environmental Protection
+Agency
+EPA-530-F-014-D
+
+February 2016
+-------
+          FRUIT AND VEGETABLE STORAGE  GUIDE
+         INSIDE THE FRIDGE
+
+         • Apples, berries, and cherries
+         • Grapes, kiwi, lemons, and oranges
+         • Melons, nectarines, apricots, peaches, and
+           plums (after ripening at room temperature)
+         • Avocados, pears, tomatoes
+           (after ripening at room temperature)
+         • Almost all vegetables and herbs
+OUTSIDE THE FRIDGE
+
+ • Bananas, mangos, papayas, and
+  pineapples: store in a cool place
+ • Potatoes / onions: store in
+  a cool, dark place
+ • Basil and winter squashes:
+  store at room temperature—
+  once cut, store squashes in fridge
+MORE STORAGE TIPS
+
+ • If you like your fruit at room temperature, take what you will eat for the day out of the fridge in the morning.
+ • Many fruits give off natural gases that hasten the spoilage of other nearby produce. Store bananas, apples, and
+  tomatoes by themselves and store fruits and vegetables in different bins.
+
+ • Consider storage bags and containers designed to help extend the life of your produce.
+
+ • To prevent mold, wash berries just before eating.
+-------
+SMART  PREP: PREP  NOW,  EAT LATER
+
+           Prepare perishable foods soon after shopping.
+            It will be easier to whip up meals later in the
+               week, saving time, effort, and money.
+EPA-530-16-F-014-E
+February 2016
+HELPFULTIPS
+ • When you get home from the store, take the time to wash,
+  dry, chop, dice, slice, and place your fresh food items in clear
+  storage containers for snacks and easy cooking.
+
+ • Befriend your freezer and visit it often. Freeze food such as
+  bread, sliced fruit, or meat that you know you won't be able to
+  eat in time.
+
+ • Cut your time in the kitchen by preparing and freezing meals
+  ahead of time.
+
+ • Prepare and cook perishable items, then freeze them for use
+  throughout the month. For example, bake and freeze chicken
+  breasts or fry and freeze taco meat.
+-------
+Smart Saving:
+                                    EPA-530-16-F-014-F
+                                    February 2016
+Smart Saving:
+                                     EPA-530-16-F-014-F
+                                     February 2016
+-------
+                    UP WIT
+             HEWA
+             -ODD?
+CONSIDER THE TOMATO...
+
+31% of fresh tomatoes bought by U.S. households are
+thrown out—that's 21 tomatoes a year per person!
+            Throwing out that many
+
+            tomatoes costs us a bundle—
+
+      3     over $2.3 billion a year.
+
+   BILLION     If only it was just tomatoes...
+
+            the cost of all U.S. household
+
+            food waste = $166 BILLION!
+ WASTED FOOD = WASTED RESOURCES
+U.S. FOOD WASTE ACCOUNTS FOR:
+     25%
+       of all
+     our fresh
+     water use.
+ Enough
+ energy to
+ power the
+country for
+ more than
+ a week.
+  Enough
+
+land to feed
+
+the world's
+
+  hungry.
+By making small shifts in how we  shop, store, and prepare food,  we
+
+can keep the valuable resources  used to produce  and  distribute food
+
+from going to waste.
+
+Sources: USDA Economic Research Service,(ERS) Total and Per Capita Value of Food Loss in the United State (2012); USDA ERS , The Value of Retail- and Consumer-
+Level Fruit and Vegetable Losses in the United States (2011); Venkat, The Climate Change and Economic Impacts of Food Waste in the United States (2012): Hall et al, The
+Progressive Increase of Food Waste in America and Its Environmental Impacts (2009)
+&EPA
+   United States
+   Environmental Protection
+   Agency
+                         EPA-530-16-F-014-H
+
+                         February 2016
+-------
+                            A  WORKSHOP
+       AEPA
+Enviionmamal Protection
+Agency
+                                                   [Presenter]
+                                                          [Date]
+       EPA-530-014-G
+       February 2016
+Before the Workshop:
+• Add presenter's name and affiliation; date of workshop; and logos of pilot partners to
+  slide 1.
+• Print handouts for attendees (Suggest three slides to a page in black/white for taking
+  notes and printing double sided.)
+
+Opening the Workshop and Overview of the Pilot: 2 minutes
+
+Welcome people and thank them for coming.
+
+The Food Too Good to Waste Campaign is a collaborative effort of [your organization],
+[the EPA], and [other organizations] concerned about the impacts of wasted food. Our
+role is to engage households in efforts to reduce wasted food through workshops such as
+this one. We do this in part by utilizing the tools available to us in the Food: Too Good To
+Waste Toolkit.
+-------
+                 The information contained in this FTGTW
+                 Implementation Guide and Toolkit is intended to
+                 inform the public and does not establish or
+                 affect legal rights or obligations. Links to non-EPA
+                 sites do not imply any official EPA endorsement
+                 of, or responsibility for, the opinions, ideas, data
+                 or products presented at those sites, or
+                 guarantee the validity of the information
+                 provided.
+Disclaimer language
+-------
+      Workshop Purpose
+
+      Examine the problem of
+      wasted food including:
+        How much goes to waste
+        Why waste happens
+        Why waste matters
+        Strategies to reduce waste
+Less than 1 minute
+Today we will be discussing the issue of wasted food including
+-------
+        Purpose
+        By making small shifts in how
+        we shop, store and prepare food,
+        we can toss less, eat well,
+        simplify our lives, save money
+        and keep the valuable resources
+        used to produce and distribute
+        food from going to waste.
+1 minute
+
+The premise behind the FTGTW campaign is that by making small changes in our food
+management behaviors, we can have a large impact, both for ourselves and for the
+environment and our communities.
+                                                        4
+-------
+         Introductions
+
+         Introduce yourself by:
+           Giving your name
+           Telling a short story that
+           illustrates why you care about
+           wasted food
+15 to 20 minutes
+
+Depending on whether you have a small or larger number of people attending the
+workshop, there are two options for introductions.
+
+8 people or less:
+Let everyone introduce themselves to the group as a whole. Keep introductions to 2
+minutes or less.
+
+8 or more:
+Have people pair off to introduce themselves to each other. Give each person 2 to 3
+minutes each. After they finish, have a few people share their stories with the group as a
+whole.
+-------
+               HOW MUCH  FOOD
+               IS WASTED?
+                                                             6
+Less than 1 minute
+
+Let's start by looking at how much food is wasted.
+
+***************************
+In the United States, 31 percent—or 133 billion pounds—of the 430 billion pounds of the
+available food supply at the retail and consumer levels in 2010 went uneaten.
+
+The estimated total value of food loss at the retail and consumer levels in the United States
+was $161.6 billion in 2010. The top three food groups in terms of share of total value of
+food loss were meat, poultry, and fish (30 percent, $48 billion); vegetables (19 percent, $30
+billion); and dairy products (17 percent, $27 billion).
+-------
+
+                Food  accounts for 21% of  the
+                American waste  stream
+3 minutes
+
+Currently, in the United States it is estimated that more than 30% of edible food goes to waste.
+
+In 2013, 37 million tons of food waste were generated, of which only 1.84 million tons (5%) was
+recovered, resulting in 35 million tons going into the nation's landfills and incinerators. Food is the
+largest stream of municipal solid waste (MSW) materials going to discard, accounting for 21% of the
+American waste stream.
+
+Wasted Food occurs all along the food  value chain - from farm to fork.
+•  For example, food is sometimes left in the fields because it costs more to harvest than what it
+   could be sold for.
+•  Food that travels long distances is more likely to perish in route.
+•  At the retail  level, food is wasted when grocery stores or restaurants buy more of a perishable
+   food item than they can sell.
+
+In this workshop,  we will focus on wasted food in the household.
+
+Sources:
+Buzby, Jean, Wells, Hodan and Jeffrey Hyman. "The Estimated Amount, Value, and Calories of Postharvest Food Losses at the Retail and Consumer Levels in
+the United States." USDA, Economic Research Service. Economic Information Bulletin Number 121. February 2014
+U.S. EPA. Advancing Sustainable Materials Management: 2013 Fact Sheet. Assessing Trends in Material Generation, Recycling and Disposal in the United
+States. June 2015
+Gustavsson, Jenny, Christel Cederberg, and Ulf Sonesson. 2011. Global Food Losses and Food Waste: Extent, Causes and Prevention. Report for Swedish
+Institute for Food and Biotechnology, http://www.fao.org/fileadmin/user_upload/ags/publications/GFL_web.pdf.
+Economic Research Service. 2010. Loss-Adjusted Food Availability: Spreadsheets.
+http://ers.usda.gov/Data/FoodConsumption/FoodGuideSpreadsheets.htm.
+-------
+        WHY WASTE
+               HAPPENS
+                                    8
+Less than 1 min
+
+Next we look at...
+                                                8
+-------
+               In  one  month,
+               a  family of  4  wastes
+                                                                               9
+2 minutes
+Looking at the amount of wasted food by household:
+The photo shows a depiction of a family of 4's monthly share of wasted food in eight food
+groups.
+
+Estimates for the various food types from a 1997 USDA article are shown in this picture.  This
+includes both retail- and consumer-level  losses and is equivalent to about a # per person per day.
+
+Fresh fruit and vegetables account for the largest percentage of household waste by weight.
+Meat is the most expensive portion.
+
+Some experts estimate that this wasted food costs a family of four $1600 a year.
+***********************************
+Sources:
+Martin, Andrew. One Country's Table Scraps, Another Country's Meal. New York Times, May 18, 2008.
+(http://www. nytimes.com/2008/05/18/weekinreview/ 18martin.html?_r=0)
+PHOTO: http://www.nytimes.com/imagepages/2008/05/18/weekinreview/18martin-popup.html
+Hall et al, 2009, The Progressive Increase of Food Waste in America and Its Environmental Impact, Plos ONE
+Kantor, Linda Scott., Lipton, Kathryn., Manchester, Aiden, Oliveira. Estimating and Addressing America's Food Losses. USDA 1997.
+http://webarchives.cdlib.Org/swltx36512/http://www.ers.usda.gov/publications/foodreview/janl997/jan97a.pdf
+Buzby, Jean C., Hodan F. Wells, and Jeffrey Hyman. The Estimated Amount, Value, and Calories of Postharvest Food Losses at the Retail and Consumer
+Levels in the United States, ElB-121, U.S. Department of Agriculture, Economic Research Service, February 2014.
+Venkat,Kumar. The Climate Change and Economic Impacts of Food Waste in the United States. Int. J. Food System Dynamics 2 (4), 2011, 431-446, April 2012.
+-------
+
+             Research  shows that.
+                                    Total Household
+                                 Food and Drink Waste
+                   Non-Edibles
+                       18°c
+                                     Preventable
+           64° b
+                  Possibly Edible
+- 18%
+                   Prepared or
+                           Much
+                     ~ 40%
+Not IMd in lime
+    - 55°o
+                                                 • Quested and Johnson, 2009
+                                                                   10
+ 3 minutes
+
+Previous research done in the U.K. shows that:
+•  preventable food waste (that portion of waste that could have eaten at one time) is about
+   64% of all consumer-level waste
+•  And the rest was split between non-edibles such as bones, egg shells, carrot tops and possible
+   edibles (food that is sometimes not eaten but could be with the right preparation, for
+   example, beet greens).
+Of the 64% that is preventable food waste:
+•  Just over 40% was attributed to having cooked or served too much (think of the waste left on
+   kids' plates). This also includes food that was burnt or otherwise spoilt during preparation.
+•  But most of it was food that was not used in time. Of this, the largest percentage was
+   vegetables and salad.
+
+Of the food not use in time, the UK researchers also found that much of the food not used in time
+had never been opened.
+Additional Notes
+   Other category constitutes things like fruit that won't ripen or losses during cooking.
+•   What people think of as edible can vary a great deal
+
+Source: Quested and Johnson, 2009, Household Food and Drink Waste in the U.K., WRAP Report
+                                                                                             10
+-------
+
+            Yet  ... we  all  hate waste
+                                                           11
+1 minute
+
+The mystery is why we waste so much especially since recent brain research shows that
+we really dislike waste, especially when it is something that we consider ours. There is
+even a term for it: loss aversion.  Essentially, we are wired to hate losing the resources we
+have in hand.
+
+The good news here is that we have an in-built motivation to waste less.
+Explanation of loss aversion: Losses are more powerful behavioral motivators than gains.
+Owning something increases its value. Losing $100 worth of food has a greater impact on
+how satisfied you are than saving $100 on food.
+
+Source: Thaler and Sunstein, 2008, Nudge: Improving Decisions about Health, Wealth and
+Happiness; Kahneman, 2011, Thinking, Fast and Slow
+                                                                                  11
+-------
+
+            Brain  on  automatic
+                                                           12
+2 minutes
+
+Still, there must be other things at play. One is we often act automatically instead of
+reflecting on what we are doing.
+
+For example, you are likely to serve yourself more if your plate is bigger or if the color
+contrast between the plate and the food is low. In this picture, the green plate has more
+beans than the orange plate.  Serving more food can lead to not finishing what's on our
+plates and plate waste.
+
+Our brains are often on automatic when we do routine tasks such as shopping and clean-
+up after meals, so we might forget what leftovers we have in the refrigerator or that we
+still have tomatoes in the refrigerator from the last time we went to the store.
+
+Source: Cornell University Food and Brand Lab
+                                                                                 12
+-------
+           Dynamic  lifestyles
+                                      Artist: Beverly Naidus
+                                                      13
+2 minute
+
+Another big culprit in wasted food is our dynamic lifestyles.
+
+Planning is one thing and following through on plans is another. We want to eat nearby
+or have work commitments. Both of these may take precedence over going home to
+cook that meal you planned on.
+
+A study by the Cornell University Food and Brand Lab found that 93 percent of
+respondents acknowledged buying foods they never used.
+Artist: Beverly Naidus
+                                                                           13
+-------
+          Complexity of Change
+
+          Additional Barriers:
+            Not enough information
+            Time needed to learn  new skills
+            Time needed to prepare fresh food
+            Preference for one food type versus
+            another
+                                                   14
+2 minutes
+
+While researchers can point to some general behaviors leading to wasting food, for
+different families there will be different barriers to reducing food waste. Feeding a
+household is a complex series of activities. There's meal planning, shopping, storing,
+preparing and cooking food as well as choosing what to eat at any given moment. Some
+of the barriers to making changes in how we carry out these activities are: not having
+enough information to make a change, a lack of time, and food preferences. Children
+especially can favor one type of food over another and though you try to get them to eat
+food that is good for them, it seems that just as often its still on the plate at the end of
+the meal.
+                                                                      14
+-------
+        WHY WASTING
+             FOOD  MATTERS
+                                      15
+Less than 1 min
+
+Notwithstanding these barriers to reducing wasted food, there are significant benefits to
+be gained.
+                                                   15
+-------
+           By Keeping  Good  Food
+                 from Going  to  Waste ...
+            We can:
+              Toss less
+              Eat well
+              Simplify our
+              lives
+              Save money
+   FIGHT
+FOOD WASTE
+in the home
+      • Jrrrf to lov*
+
+         to *ovr
+      ^.1
+                                      JBloom, Fizhi Food Wiitetnibe Home, Junurv I"1,
+                                        Via Fbcfa. Ciezme Coramom
+                                                         16
+3 min
+
+As this WWII poster suggests, the benefits of keeping good food from going to waste
+include saving money. As mentioned earlier in the presentation, some experts estimate
+the cost of wasted food for a family of 4 to be $1600/year.
+
+Buzby, Jean C, Hodan F. Wells, and Jeffrey Hyman. The Estimated Amount, Value, and
+Calories of Postharvest Food Losses at the Retail and Consumer Levels in the United States,
+EIB-121, U.S. Department of Agriculture, Economic Research Service, February 2014.
+
+Venkat,Kumar. The Climate Change and Economic Impacts of Food Waste in the United
+States. Int. J. Food System Dynamics 2 (4), 2011, 431-446, April 2012.
+
+Other benefits include:
+
+Keeping fruit and vegetables fresh for longer periods of time may help to increase their
+consumption.
+
+By trying different ways to buy and prep food, we can simplify our lives.
+
+And there is the basic satisfaction that comes from wasting less.
+                                                                              16
+-------
+         What it costs us in $
+
+         The estimated total value of food
+         loss at the retail and consumer levels
+         in United States:
+
+
+          $161.6 BILLION in 2010
+                                      Buzbv. HvmanandWdb
+                                             17
+1 min
+Sources:
+Buzby, Hyman and Wells; The Estimated Amount, Value, and Calories of Postharvest Food
+Losses at the Retail and Consumer Levels in the United States, (2014)
+                                                              17
+-------
+          Wasted  Food  =
+                 Wasted Resources
+
+          U.S. food production accounts for:
+            50% of land use
+            80% of water use
+            10% of total energy use
+                                                    18
+2 minutes
+
+But that's not all it costs us! U.S. food production accounts for...
+
+*********************
+Source:
+M. Webber, "How to Make the Food System More Energy Efficient," Scientific American,
+December 29, 2011
+
+USDA Economic Research Service, "Major Uses of Land in the United States," Pub.
+2002/EIB-14, 2002, http://www.ers.usda.gov/publications/EIB14/eibl4a.pdf.
+
+United States Department of Agriculture (USDA), Economic Research Service, Economic
+Bulletin No. (EIB-16), "Agricultural Resources and Environmental Indicators," Chapter 2.1,
+July 2006, http://www.ers. usda.gov/publications/arei/eibl6/.
+                                                                       18
+-------
+          Climate Consequences
+           Food is the largest stream of materials in
+           our landfills, accounting for 21% of the
+           American waste stream.
+
+
+           This large volume of disposed food is a
+           main contributor to the roughly 18% of
+           total U.S. methane emissions that come
+           from landfills
+                                                   19
+2 minutes
+
+It should also be noted that when food is landfilled, it generates methane, a gas 25 times
+more powerful than carbon dioxide.  By contrast, properly managed composting is not a
+major source of methane.
+Sources:
+U.S. EPA. Overview of Greenhouse Gases: Methane Emissions.
+http://epa.gov/climatechange/ghgemissions/gases/ch4.html August 2015
+                                                                      19
+-------
+         Discussion
+         What would keeping food from
+         going to waste:
+          Do for you?
+          Do for the environment?
+          Do for your community?
+                                             20
+12 minutes
+
+Have workshop participants group in pairs and give each 4 minutes to share the discussion
+questions.
+
+After everyone has had a chance to discuss, reconvene the group and ask for a few people
+to share their insights from the discussion.
+                                                              20
+-------
+            1
+STRATEGIES TO
+REDUCE WASTED
+FOOD
+                                                            21
+1 minute
+
+In developing the pilot, a workgroup of researchers and practitioners evaluated different
+strategies to prevent wasted food. The next slides present the top strategies in terms of
+the workgroup's evaluation criteria.
+
+The strategies cover the range of activities we undertake as households to feed ourselves
+from planning meals, to buying, storing, prepping and making choices about what to eat
+when.
+
+Choosing all the presented strategies to focus on is not to say that there are not other
+great strategies. One of the efforts in the [small or large-scale campaign] is to test how
+effective these strategies are.
+                                                                                  21
+-------
+             SMART  SHOPPING:
+                    BUY WHAT  YOU  NEED
+                                SMART STRATEGY:
+                                  Make a Shopping 1
+                                   with Meals in Mind
+                          • TWnh about tww nwymsiSyoul eat at none this week and how tang
+                           before your ne*t stopptng too
+                          * Neit to fresft Kerns on tfe ftst note ifte auanmy you need or nuttier of
+                           meals yOu'/e buyins for
+
+                          * Stop ytx* tatctwo first and note items you alreacty have
+                                           DtD      iUSADYKlVI
+
+                                      Mrch for a nook     Enaufh fcir ana k«Ji
+                                                                22
+2 minutes
+
+The first of the four strategies is making a food shopping list with meals in mind. This
+strategy is a little simpler than all-out meal planning and it leaves flexibility for buying
+what is local and seasonal, say if you go to the farmers market and find an abundance of
+summer squash.
+
+The object in making a shopping list with meals in mind is both to check what you
+already have on hand, what we call "shopping your kitchen first" but also to consider
+how many meals you will be likely to eat at home before you next go shopping and buy
+accordingly.
+
+By making a  list with meals in mind, you will waste less, eat better, and save time and
+money.
+
+This strategy also focuses on buying only the quantities you need until your next
+shopping trip.  The effort here is to be aware when you are shopping how much you are
+putting in your cart rather than being on autopilot when shopping.  By buying no more
+than what you expect to use, you  will be more likely to use it up and keep it fresh.
+                                                                                         22
+-------
+            SMART  STORAGE:
+            KEEP FRUITS AND VEGETABLES FRESH
+                   FRUIT AND VEGETABLE STORAGE GUIDE
+                   • •*•*•**•*«•»• ((•*•*• •**•*••••••*• *•)•••*• *4 **•»•*•* *••*(»•••«•**•*••••••**•••»• *»4 »••*•»*
+                      INSIDE THE FRIOCE       OUTSIDE THE FRIDGE
+                                        cnm*t nrt« a coo pin
+                                        onct OA BOW
+                   HOOf STOWAGE IPS
+                   • • not •
+                                 iM •»» irO) wt Mt & We tUv out
+                            T
+                       y MM)>« M sen IT^K m
+                   • Conor Ken« lad «« araran OnwM re n»»nr« tf» lit a iw pnOuce
+                                                           23
+2 minutes
+
+The second strategy is perhaps the easiest of all - storing fruits and vegetables for
+maximum freshness, especially knowing which fruits and vegetables last longer inside or
+outside the fridge. We've developed a storage guide to help out with this strategy.
+
+By storing fruits and vegetables for maximum freshness, they will taste better and last
+longer, helping you eat more of them.
+                                                                                  23
+-------
+           SMART  PREP:
+                 PREP NOW, EAT LATER
+                                     Image courtesy of Gran Cochianc FrecDiiitalPhotos net
+                                                          24
+2 minutes
+
+The third strategy is to prep your perishables as soon as possible and, if possible, when
+you return from your grocery shopping trip. This strategy helps with busy lifestyles,
+those times when you get home and only have a half hour or so to fix that dinner with
+fresh vegetables.  By preparing perishable foods post-shopping, you'll make it easier to
+whip up meals later in the week, saving time, effort and money. Many people also
+prepare meals in batch up front.
+                                                                               24
+-------
+           SMART  SAVING:
+                 EAT WHAT  YOU  BUY
+                                                          25
+1 minute
+
+The final strategy is to eat what needs eating first. By being mindful of old ingredients
+and leftovers you need to use up, you'll waste less and may even find a new favorite dish
+in the process.
+
+One way to do this is to move food that's likely to spoil soon to the front of the shelf or a
+designated "eat now" area. Another is to learn flexible recipes. Casseroles, frittatas,
+soups and smoothies are great ways to use leftovers, and odds and ends.
+                                                                                25
+-------
+       Discussion
+       What other strategies can
+       you recommend?
+                                   26
+10 minutes
+Solicit other strategies from group as a whole.
+                                                26
+-------
+              ::OOD:  TOO  GOOD TO
+              VASTE  CHALLENGE
+                                                        27
+Less than 1 minute
+
+One way to succeed in making these shifts is to make a record of what you are doing.
+The workgroup developed a challenge to engage households in reducing wasted food by
+raising awareness on how much food is going to waste.
+
+A second purpose of the challenge collect data that will help in the design of future
+programs to reduce wasted food.
+                                                                            27
+-------
+          Take the
+
+          Challenge
+          Record the
+          amount of
+          household wasted
+          food before and
+          after adopting one
+          (or more) of the
+          four strategies
+                                                  28
+3 minutes
+
+
+Record the amount of household food going to waste before and after trying one of the
+suggested strategies. This strategy takes place over four weeks. In Week 1, you will be
+measuring how much food currently goes to waste in your household. Weeks 2 and 3 are
+for trying out a strategy to prevent waste. In Week 4, you will measure the impact of the
+strategies.

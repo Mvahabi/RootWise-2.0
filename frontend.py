@@ -53,7 +53,7 @@ h1, h2, h3, .gr-markdown h2 {
 
     with gr.Row():
         with gr.Column(elem_classes="section"):
-            gr.Markdown("## ✏️ Idea Journal")
+            gr.Markdown("## ✏️ Personal Notepad")
             gr.Markdown("Every food system has stories. This is your personal scratchpad — where dreams of fermented miso, grandparent recipes, or zero-waste ideas take root.")
 
             user_name = gr.Textbox(
