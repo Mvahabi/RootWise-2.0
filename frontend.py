@@ -45,6 +45,7 @@ h1, h2, h3, .gr-markdown h2 {
 
 .message.user {
     background-color: #E6F0D7 !important;
+               
 }
 """) as demo:
 
@@ -53,36 +54,83 @@ h1, h2, h3, .gr-markdown h2 {
 
     with gr.Row():
         with gr.Column(elem_classes="section"):
-            gr.Markdown("## ✏️ Personal Notepad")
-            gr.Markdown("Every food system has stories. This is your personal scratchpad — where dreams of fermented miso, grandparent recipes, or zero-waste ideas take root.")
+            gr.Markdown("## Personal Notepad")
+            gr.Markdown("Heard something tasty or thought of a clever zero-waste trick? This is your personal notepad (where dreams take root).")
 
             user_name = gr.Textbox(
                 label="What's your name?",
-                placeholder="🌱 Pick a name — like Lily, FarmerJay, or PickleQueen..."
+                placeholder="🌱 Pick a name — like Kevin or PickleQueen... This will be your key to this notebook"
             )
-            name_submit = gr.Button("Start My Idea Journal")
+            name_submit = gr.Button("Start Notepad")
 
             user_entry = gr.Textbox(
                 label="New thought, recipe, tip, or idea?",
                 lines=4,
                 placeholder="E.g. 'I want to try purple yam bread', 'we always freeze carrot tops', 'ask mom about our stew herbs'"
             )
-            entry_submit = gr.Button("Save to My Notepad")
+            entry_submit = gr.Button("Save to Database")
 
             name_submit.click(set_user_name, inputs=[user_name], outputs=[user_name])
             entry_submit.click(append_to_user_rag, inputs=[user_entry], outputs=[user_entry])
 
         with gr.Column(elem_classes="section"):
-            gr.Markdown("## 🥬 Upload & Detect Vegetables")
-            gr.Markdown("Upload a photo of your fridge finds, backyard harvest, or farmers market bounty. We'll ID the ingredients and add them to your RAG knowledge base — automatically.")
+            # State variables
+            season_state = gr.State("")
+            restrictions_state = gr.State("")
+
+            # Section header and instructions
+            gr.Markdown("## Upload Vegetables")
+            gr.Markdown(
+                "Snap a photo of your fridge finds, backyard harvest, or a beautiful farmer's market stand. "
+                "We'll identify the ingredients and add them to your personalized knowledge base."
+            )
+
+            # Upload and detection UI
             veg_image = gr.File(label="📷 Upload Image", file_types=["image"])
             detect_button = gr.Button("🔍 Detect Vegetables")
             detected_output = gr.Textbox(interactive=False, show_label=False)
-            detect_button.click(handle_image_upload, inputs=[veg_image], outputs=[detected_output])
+
+            # Post-detection options
+            add_button = gr.Button("➕ Add to Database", visible=False)
+            confirmation_msg = gr.Textbox(interactive=False, visible=False, show_label=False)
+
+            # Detection logic + conditional UI update
+            def handle_and_show(img):
+                result = handle_image_upload(img)
+                show_add_button = gr.update(visible=bool(result))
+                hide_confirmation = gr.update(visible=False)
+                return result, show_add_button, hide_confirmation
+
+            detect_button.click(
+                fn=handle_and_show,
+                inputs=[veg_image],
+                outputs=[detected_output, add_button, confirmation_msg]
+            )
+
+            # Add-to-database logic and UI reset
+            def add_and_reset(season, ingredients, restrictions):
+                if "," in ingredients:
+                    ingredients = ingredients.split(",")
+                    for veg in ingredients:
+                        clean_veg = veg.strip(" [']\n")
+                        add_to_rag(season, clean_veg, restrictions)
+                else:
+                    clean_veg = ingredients.strip(" [']\n")
+
+                hide_add_button = gr.update(visible=False)
+                return "Input added to RAG database!", hide_add_button
+
+            add_button.click(
+                fn=add_and_reset,
+                inputs=[season_state, detected_output, restrictions_state],
+                outputs=[gr.Textbox(label="Status"), add_button]
+            )
+
+
 
     with gr.Column(elem_classes="section"):
-        gr.Markdown("## 💬 Chat with the Assistant")
-        gr.Markdown("Ask for a zero-waste lunch, a gut-friendly dinner idea, or ways to preserve the okra from your neighbor. RootWise chats are powered by dynamic prompts and locally informed advice.")
+        gr.Markdown("## Chat")
+        gr.Markdown("Ask for a zero-waste lunch, a gut-friendly dinner idea, or ways to preserve the okra from your neighbor. RootWise chats are powered by data on functional medicine and whatever else you want it to remember.")
         chatbot = gr.Chatbot(type='messages')
         msg = gr.Textbox(
             label="Ask a Question",
@@ -94,7 +142,7 @@ h1, h2, h3, .gr-markdown h2 {
         clear.click(lambda: None, None, chatbot, queue=False)
 
     with gr.Row():
-        gr.Markdown("## 📚 Data Tools")
+        gr.Markdown("## 📚 Data Tools 📚")
 
     with gr.Row():
         with gr.Column(elem_classes="section"):
@@ -144,10 +192,9 @@ h1, h2, h3, .gr-markdown h2 {
             file_list.change(read_selected_file, inputs=[file_list], outputs=[file_contents, file_preview])
 
         with gr.Column(elem_classes="section"):
-            gr.Markdown("### 🌍 About This Project")
-            gr.Markdown("Why does RootWise exist? Because tech can be local, loving, and low-waste. Learn how this system connects AI with land, food, and care.")
-            open_pdf_button = gr.Button("📖 Show About Page")
+            gr.Markdown("### 🌍 About This Project 🌍 ")
+            open_pdf_button = gr.Button("Show About Page")
             pdf_viewer = gr.Image(type="filepath", value="./about_us.png", visible=False)
-            close_pdf_button = gr.Button("❌ Close", visible=False)
+            close_pdf_button = gr.Button("Close", visible=False)
             open_pdf_button.click(show_pdf, outputs=[pdf_viewer, close_pdf_button], queue=False)
             close_pdf_button.click(hide_pdf, outputs=[pdf_viewer, close_pdf_button], queue=False)

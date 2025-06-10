@@ -165,9 +165,6 @@ def detect_vegetables(image_path):
                 items = line.split(":", 1)[1].strip(" []\n")
                 vegs = [v.strip("' ") for v in items.split(',') if v.strip()]
 
-        if vegs:
-            for veg in vegs:
-                add_to_rag(season='', ingredients=veg.strip(" [']\n"), restrictions='')                    # could use some add_to_rag() improvement
         return vegs if vegs else "No vegetables detected."
     
     except subprocess.CalledProcessError as e:
@@ -421,14 +418,12 @@ def stream_response(message, history):
             "- Make it feel like a transparent collaboration — not a generic chatbot interaction.\n"
         )
 
-
-
-        # Only include the latest user/assistant message for context
+        # Include the latest user/assistant message for context
         truncated_history = ""
         if history:
             last_messages = history[-2:]  # Only last exchange
             for m in last_messages:
-                truncated_history += f"{m['role'].capitalize()}: {m['content'][:300]}\n"  # Clip each to 300 chars max
+                truncated_history += f"{m['role'].capitalize()}: {m['content'][:300]}\n"  
 
         rag_retrieval = query_engine.query(message)
 
@@ -519,3 +514,14 @@ def show_pdf():
 
 def hide_pdf():
     return gr.update(visible=False), gr.update(visible=False)
+
+#
+# For evaluation.py
+#
+
+def retrieve_relevant_context(prompt, max_chars=2000):
+    global query_engine
+    if query_engine is None:
+        raise Exception("Query engine not initialized.")
+    result = query_engine.query(prompt)
+    return str(result)[:max_chars]
