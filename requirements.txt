@@ -19,9 +19,6 @@ llama-index-llms-nvidia==0.1.4
 llama-index-vector-stores-milvus==0.1.6
 llama-index-vector-stores-postgres==0.1.5
 
-# Milvus
-pymilvus==2.4.0
-
 # Embeddings + NLP
 sentence-transformers==3.0.0
 nltk==3.8.1

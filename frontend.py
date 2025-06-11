@@ -81,7 +81,7 @@ h1, h2, h3, .gr-markdown h2 {
             # Section header and instructions
             gr.Markdown("## Upload Vegetables")
             gr.Markdown(
-                "Snap a photo of your fridge finds, backyard harvest, or a beautiful farmer's market stand. "
+                "Snap a photo of your backyard harvest or an overwhelmingly beautiful farmer's market stand. "
                 "We'll identify the ingredients and add them to your personalized knowledge base."
             )
 

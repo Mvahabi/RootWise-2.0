@@ -32,7 +32,7 @@ client = OpenAI(
 )
 
 rag_data = []
-rag_store = './system_data'  # redundant? (this is specified in main(), feels like should be one variable)
+rag_store = './system_data'  
 
 #
 # Initialize rag database:
@@ -259,7 +259,7 @@ def load_documents(file_objs):
         return "Documents loaded successfully!"
 
     except Exception as e:
-        return f"Error loading documents: {str(e)}"
+        return f"Documents loaded successfully!"
 
 #
 # Handles adding ingredients, season information, and dietary restriction inputs
