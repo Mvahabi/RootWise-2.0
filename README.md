@@ -64,26 +64,26 @@ Access the pod:
 kubectl exec -it embedqa-gpu -- /bin/bash
 ```
 
-## Files
+### Files
 
 Ensure the following files are included in your repo before building the Docker image:
 
-# app.py
+#### app.py
 Main function, all logic is imported. 
 
-# frontend.py
+#### frontend.py
 Gradio frontend features. 
 
-# logic.py
+#### logic.py
 The meat and potatoes, this is where the query engine and completions model at initialized and accessed. 
 
-# vis-transformer.py
+#### vis-transformer.py
 Modular implementation of the vision transformer.
 
-# best.pt 
+#### best.pt 
 YOLOv8 weights for vegetable detection.
 
-# requirements.txt
+#### requirements.txt
 A file to track dependencies. 
 
 With these files copied at build time, no manual kubectl cp steps are required, but if there are individual files revised use one or some of the following commands:
