@@ -98,7 +98,7 @@ Main function, all logic is imported.
 Gradio frontend features. 
 
 ### logic.py
-The meat and potatoes, this is where the query engine and completions model at initialized and accessed. 
+The meat and potatoes, this is where the query engine and completions model are initialized and accessed. 
 
 ### vis-transformer.py
 Modular implementation of the vision transformer.
