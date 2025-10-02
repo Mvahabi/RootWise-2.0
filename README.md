@@ -1,3 +1,6 @@
+## Some Background
+
+
 ## Setup
 ### 1. Evironmental Variables
 ```
@@ -46,10 +49,10 @@ kubectl create secret generic api-env-secrets \
   --namespace=aiea-auditors
 ```
 ### 3. Apply volume and job spec
-
+```
 kubectl apply -f pvc.yaml
 kubectl apply -f nvjob.yaml
-
+```
 ### 4. Manage and Access Pod
 Check pod status:
 ```
