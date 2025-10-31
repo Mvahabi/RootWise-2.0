@@ -1,4 +1,5 @@
 ## Some Background
+John hacked the codebase >:)
 RootWise is a project that explores how AI can make food systems more accessible, sustainable, and human-centered. The goal is to experiment with traceable, transparent, and user-focused RAG AI that uses functional medicine to connect food choices with well-being, while supporting zero-waste habits and local food knowledge.
 
 ## Setup
