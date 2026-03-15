@@ -136,3 +136,8 @@ For classic + agentic comparison:
 
 ### 7. Open this server
 http://localhost:5173
+
+
+### Demo
+https://youtu.be/CIY4ehuy7zg
+
